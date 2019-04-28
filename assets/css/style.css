@@ -11,3 +11,9 @@
 .ck{
     color:black;
 }
+.form-group,input, textarea {
+    color: #fff;
+}
+.post-thumb{
+   width: 100%; 
+}

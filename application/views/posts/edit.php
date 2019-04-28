@@ -9,6 +9,14 @@
       <label>Szöveg</label>
       <textarea id="editor"  class="form-control" name="body"  ><?php echo $post['body'];?></textarea>
   </div>
+<div class="form-group">
+    <label>Kategóriák</label>
+    <select name="catid" class="form-control">
+        <?php foreach ($categories as $category):?>
+        <option <?php if ($post['catid']==$category['id']) echo 'selected'?> value="<?php  echo $category['id']?>"><?php  echo $category['name']?></option>
+        <?php endforeach;?>
+    </select>
+</div>
   <button type="submit" class="btn btn-primary">Módosítás</button>
 </form>
 <br>

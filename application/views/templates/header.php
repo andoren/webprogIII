@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css" media="screen">
@@ -12,7 +12,8 @@
         
     </head>
     <body style="padding-top: 0px" >
-        <div class="navbar navbar-default ">
+        
+        <nav class="navbar navbar-default ">
               <div class="container">
                 <div class="navbar-header">
                   <a href="<?php echo base_url(); ?>" class="navbar-brand">Misi blog</a>
@@ -36,6 +37,6 @@
                   </ul>
                 
               </div>
-        </div>
+        </nav>
         <div  class ="container">
 
