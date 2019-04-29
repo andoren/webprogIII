@@ -34,9 +34,36 @@
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="https://github.com/andoren" target="_blank">Github oldalam</a></li>
                     <li><a href="https://uni-eszterhazy.hu/" target="_blank">EKE weboldal</a></li>
-                  </ul>
-                
+                    <?php if(!$this->session->userdata('logged_in')):?>
+                    <li><a href="<?php echo base_url()?>users/login" >Bejelentkezés</a></li>
+                    <?php endif;?>
+                    <?php if($this->session->userdata('logged_in')):?>
+                    <li><a href="<?php echo base_url()?>users/logout" >Szerkesztés</a></li>
+                    <li><a href="<?php echo base_url()?>users/logout" >Kijelentkezés</a></li>
+                    
+                    <?php endif;?>
+                    
+                  </ul>               
               </div>
         </nav>
         <div  class ="container">
+            <?php if($this->session->flashdata('user_registered')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('post_created')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_created').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('post_updated')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_updated').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('category_added')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_added').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('user_loggedin')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('user_error_loggedin')):?>
+                <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('user_error_loggedin').'</p>' ?>
+            <?php endif; ?>
+
 

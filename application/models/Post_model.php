@@ -23,7 +23,8 @@ class Post_Model extends CI_Model{
           'slug'=>$slug,  
           'body'=>$this->input->post('body'),  
           'catid'=>$this->input->post('catid'),
-            'thumbimg' => $post_image
+          'thumbimg' => $post_image,
+           'created_by'=>$this->session->userdata('user_id') 
         );
         return $this->db->insert('posts',$data);
     }
@@ -48,6 +49,12 @@ class Post_Model extends CI_Model{
         $this->db->order_by('name');
         $query = $this->db->get('categories');
         return $query->result_array();
+    }
+    public function get_posts_by_category($id){
+            $this->db->order_by('posts.id','DESC');
+            $this->db->join('categories','categories.id = posts.catid');
+            $query = $this->db->get_where('posts',array('categories.id'=>$id));
+            return $query->result_array();
     }
 }
 

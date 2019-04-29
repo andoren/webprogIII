@@ -6,7 +6,7 @@
         <img class="post-thumb thumbnail" src="<?php echo base_url().'assets/images/posts/thumbnails/'.$post['thumbimg']?>">
     </div>
     <div class="col-md-9">
-        <small class="post-date">Posztolva: <?php echo $post['created_at'];?> a(z) <strong><a href="<?php echo base_url().'posts/category/'.$post['name']?>"><?php echo $post['name'] ?></a></strong>-ban/ben</small>
+        <small class="post-date">Posztolva: <?php echo $post['created_at'];?> a(z) <strong><a href="<?php echo base_url().'categories/posts/'.$post['id']?>"><?php echo $post['name'] ?></a></strong>-ban/ben</small>
         <br>
         <div class="post-body">
             <?php echo word_limiter($post['body'],70);?>
