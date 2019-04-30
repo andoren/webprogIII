@@ -23,7 +23,7 @@ class Posts extends CI_Controller{
     }
     
    public function create(){
-              if(!$this->session->userdata('logged_in')){
+       if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
         $data['title']='Poszt készítése';
@@ -31,9 +31,9 @@ class Posts extends CI_Controller{
         $this->form_validation->set_rules('title','Cím','required');
         $this->form_validation->set_rules('body','Szöveg','required');
         if($this->form_validation->run()===FALSE){
-            $this->load->view('templates/header');
+            $this->load->view('templates/admin/header');
             $this->load->view('posts/create',$data);
-            $this->load->view('templates/footer');           
+            $this->load->view('templates/admin/footer');           
         }
         else{
                 $config['upload_path']          = './assets/images/posts/thumbnails/';
@@ -74,9 +74,9 @@ class Posts extends CI_Controller{
         }
         $data['categories'] = $this->post_model->get_categories();
         $data['title'] = 'Poszt szerkesztése';
-        $this->load->view('templates/header');
+        $this->load->view('templates/admin/header');
         $this->load->view('posts/edit',$data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/admin/footer');
    }
    public function update(){
         if(!$this->session->userdata('logged_in')){
@@ -85,6 +85,5 @@ class Posts extends CI_Controller{
       $this->post_model->update_post();
       $this->session->set_flashdata('post_updated','Poszt sikeresen frissítve.');
       redirect('posts');
-      
    }
 }

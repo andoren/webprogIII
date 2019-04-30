@@ -24,7 +24,7 @@ class Post_Model extends CI_Model{
           'body'=>$this->input->post('body'),  
           'catid'=>$this->input->post('catid'),
           'thumbimg' => $post_image,
-           'created_by'=>$this->session->userdata('user_id') 
+          'created_by'=>$this->session->userdata('user_id') 
         );
         return $this->db->insert('posts',$data);
     }

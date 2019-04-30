@@ -38,7 +38,7 @@
                     <li><a href="<?php echo base_url()?>users/login" >Bejelentkezés</a></li>
                     <?php endif;?>
                     <?php if($this->session->userdata('logged_in')):?>
-                    <li><a href="<?php echo base_url()?>users/logout" >Szerkesztés</a></li>
+                    <li><a href="<?php echo base_url()?>admin/index" >Szerkesztés</a></li>
                     <li><a href="<?php echo base_url()?>users/logout" >Kijelentkezés</a></li>
                     
                     <?php endif;?>
