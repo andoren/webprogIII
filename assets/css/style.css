@@ -79,10 +79,12 @@
     color:black;
 
 }
-/* Show the dropdown menu on hover */
+
 .dropdown:hover .dropdown-content {display: block;}
 
-
+.form-group, input, textarea{
+    color:000;
+}
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 15px;}

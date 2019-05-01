@@ -1,0 +1,1 @@
+<p><span style="font-size:26px"><span style="color:#e74c3c">Ez egy r&oacute;lam oldal <img alt="Kiscica" src="https://sites.google.com/site/kangarooz3d/home/Logos-partenaires-Google.png" style="float:left; height:512px; width:512px" /></span></span></p>

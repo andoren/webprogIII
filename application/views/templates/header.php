@@ -21,15 +21,11 @@
                 </div>
                 
                   <ul class="nav navbar-nav">
-                    <li>
-                      <a href="<?php echo base_url()?>">Főoldal</a>
-                    </li>
-                    <li>
-                      <a href="<?php echo base_url()?>posts">Posztok</a>
-                    </li>
-                    <li>
-                      <a href="<?php echo base_url()?>rolunk">Rólunk</a>
-                    </li>
+                      <?php foreach ($menus as $menu):?>
+                      <li>
+                          <a href="<?php echo $menu['link']?>" <?php if($menu['target'] == 1) echo 'target="_blank"' ?> > <?php echo $menu['name']; ?></a>
+                      </li>
+                      <?php endforeach;?>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="https://github.com/andoren" target="_blank">Github oldalam</a></li>

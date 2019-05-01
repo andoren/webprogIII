@@ -10,8 +10,7 @@ class Post_Model extends CI_Model{
             $query = $this->db->get('posts');
             return $query->result_array();
         }
-        $query = $this->db->get_where('posts',array('slug'=>$slug));
-        
+        $query = $this->db->get_where('posts',array('slug'=>$slug));        
         $data = $query->row_array();
         $data['body'] = str_replace('&','&amp',$data['body']);  
         return $data;

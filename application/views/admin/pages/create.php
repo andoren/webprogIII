@@ -11,3 +11,7 @@
 <button type="submit" class="btn btn-primary">Hozzáadás</button>
 <?php echo form_close();?>
 <?php echo '<small class="validation-error">'.validation_errors()."</small>";?>
+            <script>
+                CKEDITOR.replace( 'editor' );
+               
+            </script>

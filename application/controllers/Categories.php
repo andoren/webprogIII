@@ -31,7 +31,9 @@ class Categories extends CI_Controller{
     public function posts($id){
         $data['title']=$this->category_model->get_category($id)->name;
         $data['posts']=$this->post_model->get_posts_by_category($id);
-        $this->load->view('templates/header');
+        $this->load->model('menu_model');
+        $headerdata['menus'] = $this->menu_model->get_menus();
+        $this->load->view('templates/header',$headerdata);
         $this->load->view('posts/index',$data);
         $this->load->view('templates/footer');
     }

@@ -29,7 +29,9 @@ class Users extends CI_Controller {
         $this->form_validation->set_rules('username','Felhasználónév','required');
         $this->form_validation->set_rules('password','Jelszó','required');
         if($this->form_validation->run()===FALSE){
-            $this->load->view('templates/header');
+                            $this->load->model('menu_model');
+        $headerdata['menus'] = $this->menu_model->get_menus();
+            $this->load->view('templates/header',$headerdata);
             $this->load->view('users/login',$data);
             $this->load->view('templates/footer');
         }else{

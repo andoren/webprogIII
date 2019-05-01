@@ -24,3 +24,7 @@
 </form>
 <br>
 <?php echo '<small class="validation-error">'.validation_errors()."</small>";?>
+            <script>
+                CKEDITOR.replace( 'editor' );
+                
+            </script>

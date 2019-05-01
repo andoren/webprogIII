@@ -24,9 +24,8 @@
       <td><?php echo $post['created_by']; ?></td>
       <td><a class="btn btn-success" href="edit/<?php echo $post['slug']?>">Módosítás</a></td>
       <td><?php echo form_open('/posts/delete/'.$post['id']); ?>
-        <input type="submit" value="Törlés" class="btn btn-danger pull-left">
-        </form>
-      </td>
+<input type="submit" value="Törlés" class="btn btn-danger pull-left">
+</form></td>
 
     </tr>
     <?php endforeach;?>
@@ -34,4 +33,3 @@
 
 </table>
 </div>
-

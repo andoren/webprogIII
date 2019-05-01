@@ -4,7 +4,9 @@ class Posts extends CI_Controller{
     public function index(){
         $data['title']='Legfrissebb cikkek';
         $data['posts'] = $this->post_model->get_posts();
-        $this->load->view('templates/header');
+        $this->load->model('menu_model');
+        $headerdata['menus'] = $this->menu_model->get_menus();
+        $this->load->view('templates/header',$headerdata);
         $this->load->view('posts/index',$data);
         $this->load->view('templates/footer');
         
@@ -16,7 +18,9 @@ class Posts extends CI_Controller{
             show_404();
         }     
         $data['title'] = $data['post']['title'];
-        $this->load->view('templates/header');
+        $this->load->model('menu_model');
+        $headerdata['menus'] = $this->menu_model->get_menus();
+        $this->load->view('templates/header',$headerdata);
         $this->load->view('posts/view',$data);
         $this->load->view('templates/footer');
         
@@ -39,8 +43,8 @@ class Posts extends CI_Controller{
                 $config['upload_path']          = './assets/images/posts/thumbnails/';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 100;
-                $config['max_width']            = 1024;
-                $config['max_height']           = 1024;
+                $config['max_width']            = 2000;
+                $config['max_height']           = 2000;
 
                 $this->load->library('upload', $config);
                 if(!$this->upload->do_upload()){

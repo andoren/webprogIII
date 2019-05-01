@@ -12,61 +12,75 @@
         
         <nav class="sidenav">
               <div >
-
                   <ul>
                       <li style="padding-left: 0">
                         <div class="navbar-header" >
-                        <a href="<?php echo base_url(); ?>" class="navbar-brand" style="font-size: 30px">Misi blog</a>
-                </div>
-                  
-                  <br>
-                  <br>
-                  <hr style="color:white;">
-                      </li>
+                            <a href="<?php echo base_url(); ?>" class="navbar-brand" style="font-size: 30px">Misi blog</a>
+                        </div>                  
+                        <br>
+                        <br>
+                        <hr style="color:white;">
+                    </li>
                     <li>
                       <a href="<?php echo base_url()?>/admin">Főoldal</a>
                     </li>
                     <li>
-                       <div class="dropdown">
-                         <a href="#" class="dropbtn">Poszt</a>
+                        <div class="dropdown">
+                            <a href="#" class="dropbtn">Poszt</a>
                                 <div class="dropdown-content">
                                     <a href="<?php echo base_url()?>admin/posts/create">Készítése</a>
                                     <a href="<?php echo base_url()?>admin/posts/">Kezelése</a>
                                 </div>
-                    </div> 
+                        </div> 
                     </li>
-                     <li>
+                    <li>
                        <div class="dropdown">
                          <a href="#" class="dropbtn">Oldal</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/pages/create">Készítésee</a>
-                                     <a href="<?php echo base_url()?>admin/pages/update">Módosítása</a>
-                                     <a href="#">Törlése</a>
+                                    <a href="<?php echo base_url()?>admin/pages/create">Hozzáadás</a>
+                                    <a href="<?php echo base_url()?>admin/pages/">Módosítása</a>                                    
                                 </div>
-                    </div> 
+                        </div> 
+                    </li>
+                    <li>
+                       <div class="dropdown">
+                         <a href="#" class="dropbtn">Kategóriák</a>
+                                <div class="dropdown-content">
+                                    <a href="<?php echo base_url()?>admin/posts/create">Hozzáadás</a>
+                                    <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>
+                                </div>
+                        </div> 
+                    </li>
+                    <li>
+                       <div class="dropdown">
+                         <a href="#" class="dropbtn">Menü</a>
+                                <div class="dropdown-content">
+                                    <a href="<?php echo base_url()?>admin/posts/create">Hozzáadás</a>
+                                     <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>  
+                                </div>
+                        </div> 
                     </li>
                     <li>
                        <div class="dropdown">
                          <a href="#" class="dropbtn">Képek</a>
                                 <div class="dropdown-content">
                                     <a href="<?php echo base_url()?>admin/posts/create">Hozzáadása</a>
-                                     <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>
-                                     
+                                    <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>
                                 </div>
-                    </div> 
+                        </div> 
                     </li>
-                                        <li>
-                       <div class="dropdown">
+                    <li>
+                        <div class="dropdown">
                          <a href="#" class="dropbtn">Felhasználók</a>
                                 <div class="dropdown-content">
                                     <a href="<?php echo base_url()?>admin/posts/create">Regisztrálás</a>
-                                     <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>
-                                     
+                                    <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>
                                 </div>
-                    </div> 
+                        </div> 
                     </li>
-
-                    <li style=" position:absolute; bottom:0;" ><a href="<?php echo base_url()?>users/logout" >Kijelentkezés</a></li>                                       
+                    <li style=" position:absolute; bottom:0;" >
+                        <a href="<?php echo base_url()?>users/logout" >Kijelentkezés</a>
+                    </li>                                       
                   </ul>               
               </div>
         </nav>
@@ -89,4 +103,3 @@
             <?php if($this->session->flashdata('user_error_loggedin')):?>
                 <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('user_error_loggedin').'</p>' ?>
             <?php endif; ?>
-<div>

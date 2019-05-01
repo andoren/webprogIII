@@ -7,7 +7,7 @@
   </div>
   <div class="form-group">
       <label>Szöveg</label>
-      <textarea id="editor"  class="form-control" name="body"  ><?php echo $post['body'];?></textarea>
+      <textarea id="editor"  class="form-control" name="body"> <?php echo $post['body'];?> </textarea>
   </div>
 <div class="form-group">
     <label>Kategóriák</label>
@@ -21,3 +21,6 @@
 </form>
 <br>
 <?php echo '<small class="validation-error">'.validation_errors()."</small>";?>
+<script>
+  CKEDITOR.replace( 'editor' );            
+</script>

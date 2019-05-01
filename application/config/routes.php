@@ -1,7 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $route['admin']='admin/index';
-$route['admin/pages/create']="pages/create";
+
+$route['admin/pages/edit/(:any)']='pages/edit/$1';
+$route['admin/pages/create']='pages/create';
+$route['admin/pages']='pages/index';
 $route['admin/posts']='admin/posts';
 $route['admin/posts/create']='posts/create';
 $route['admin/posts/edit/(:any)']='posts/edit/$1';
