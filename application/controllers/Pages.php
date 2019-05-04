@@ -1,7 +1,7 @@
 <?php
 class Pages extends CI_Controller{
     
-    public function view ($page = 'fooldal'){
+    public function view ($page = 'home'){
         if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
             show_404();            
         }
@@ -17,7 +17,7 @@ class Pages extends CI_Controller{
         if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
-        $data['title']='Oldal készítése';
+        $data['title']='Create page';
         $this->form_validation->set_rules('title','Cím','required');
         $this->form_validation->set_rules('body','Szöveg','required');
         if($this->form_validation->run()===FALSE){
@@ -28,7 +28,7 @@ class Pages extends CI_Controller{
         else{
             $this->load->model('page_model');
             $this->page_model->create_page();   
-            $this->session->set_flashdata('post_created','Oldal sikeresen hozzáadva.');
+            $this->session->set_flashdata('post_created','Page has been added');
             redirect('admin/pages');  
         }
     }
@@ -42,13 +42,13 @@ class Pages extends CI_Controller{
             
             show_404();
         }
-        $data['title'] = 'Oldal szerkesztése';       
+        $data['title'] = 'Modify page';       
         $this->load->view('templates/admin/header');
         $this->load->view('admin/pages/edit',$data);
         $this->load->view('templates/admin/footer');
     }
     public function index(){          
-                if(!$this->session->userdata('logged_in')){
+       if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
         $data['title']='Oldalak';

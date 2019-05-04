@@ -1,6 +1,6 @@
-<html>
+<!doctype html>
     <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css" media="screen">
@@ -22,64 +22,64 @@
                         <hr style="color:white;">
                     </li>
                     <li>
-                      <a href="<?php echo base_url()?>/admin">Főoldal</a>
+                      <a href="<?php echo base_url()?>/admin">Home</a>
                     </li>
                     <li>
                         <div class="dropdown">
-                            <a href="#" class="dropbtn">Poszt</a>
+                            <a href="#" class="dropbtn">Posts</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Készítése</a>
-                                    <a href="<?php echo base_url()?>admin/posts/">Kezelése</a>
+                                    <a href="<?php echo base_url()?>admin/posts/create">Create</a>
+                                    <a href="<?php echo base_url()?>admin/posts/">Modify</a>
                                 </div>
                         </div> 
                     </li>
                     <li>
                        <div class="dropdown">
-                         <a href="#" class="dropbtn">Oldal</a>
+                         <a href="#" class="dropbtn">Pages</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/pages/create">Hozzáadás</a>
-                                    <a href="<?php echo base_url()?>admin/pages/">Módosítása</a>                                    
+                                    <a href="<?php echo base_url()?>admin/pages/create">Create</a>
+                                    <a href="<?php echo base_url()?>admin/pages/">Modify</a>                                    
                                 </div>
                         </div> 
                     </li>
                     <li>
                        <div class="dropdown">
-                         <a href="#" class="dropbtn">Kategóriák</a>
+                         <a href="#" class="dropbtn">Categories</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Hozzáadás</a>
-                                    <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>
+                                    <a href="<?php echo base_url()?>admin/posts/create">Create</a>
+                                    <a href="<?php echo base_url()?>admin/posts/update">Modify</a>
                                 </div>
                         </div> 
                     </li>
                     <li>
                        <div class="dropdown">
-                         <a href="#" class="dropbtn">Menü</a>
+                         <a href="#" class="dropbtn">Menus</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Hozzáadás</a>
-                                     <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>  
+                                    <a href="<?php echo base_url()?>admin/menu/create">Create</a>
+                                     <a href="<?php echo base_url()?>admin/menu">Modify</a>  
                                 </div>
                         </div> 
                     </li>
                     <li>
                        <div class="dropdown">
-                         <a href="#" class="dropbtn">Képek</a>
+                         <a href="#" class="dropbtn">Galery</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Hozzáadása</a>
-                                    <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>
+                                    <a href="<?php echo base_url()?>admin/posts/create">Add</a>
+                                    <a href="<?php echo base_url()?>admin/posts/update">Modify</a>
                                 </div>
                         </div> 
                     </li>
                     <li>
                         <div class="dropdown">
-                         <a href="#" class="dropbtn">Felhasználók</a>
+                         <a href="#" class="dropbtn">Users</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Regisztrálás</a>
-                                    <a href="<?php echo base_url()?>admin/posts/update">Kezelése</a>
+                                    <a href="<?php echo base_url()?>admin/posts/create">Register</a>
+                                    <a href="<?php echo base_url()?>admin/posts/update">Modify</a>
                                 </div>
                         </div> 
                     </li>
                     <li style=" position:absolute; bottom:0;" >
-                        <a href="<?php echo base_url()?>users/logout" >Kijelentkezés</a>
+                        <a href="<?php echo base_url()?>users/logout" >Log out</a>
                     </li>                                       
                   </ul>               
               </div>

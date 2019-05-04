@@ -12,13 +12,34 @@ class Menu_model extends CI_Model{
             $data = $query->result_array();
         }
         else{
-            $this->db->where(array('deleted',0));
-            $this->db->where(array('name',$name));
-            $this->db->order_by('created_at',ASC);
-            $query = $this->db->get('menus');
+            $this->db->order_by('created_at','ASC');
+            $query = $this->db->get_where('menus',array('deleted'=>0,'name'=>$name));
+            die($name);
             $data = $query->row_array();
         }
         return $data;
+        
+    }
+    public function create_menu(){
+        
+        if($this->input->post('target')==='target'){
+          $data = array(
+          'name'=>$this->input->post('name'),  
+          'link'=> $this->input->post('external_link'),  
+          'target'=>1      
+        );
+        }
+        else {
+          $data = array(
+          'name'=>$this->input->post('name'),  
+          'link'=> base_url().$this->input->post('link'),  
+          'target'=>0     
+        );
+        }
+
+        return $this->db->insert('menus',$data);
+    }
+    public function update_menu(){
         
     }
     

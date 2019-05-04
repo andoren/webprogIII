@@ -2,7 +2,7 @@
 
 class Posts extends CI_Controller{
     public function index(){
-        $data['title']='Legfrissebb cikkek';
+        $data['title']='Most recent posts';
         $data['posts'] = $this->post_model->get_posts();
         $this->load->model('menu_model');
         $headerdata['menus'] = $this->menu_model->get_menus();
@@ -77,7 +77,7 @@ class Posts extends CI_Controller{
             redirect('posts');
         }
         $data['categories'] = $this->post_model->get_categories();
-        $data['title'] = 'Poszt szerkesztése';
+        $data['title'] = 'Edit post';
         $this->load->view('templates/admin/header');
         $this->load->view('posts/edit',$data);
         $this->load->view('templates/admin/footer');
@@ -87,7 +87,7 @@ class Posts extends CI_Controller{
            redirect('users/login');
        }
       $this->post_model->update_post();
-      $this->session->set_flashdata('post_updated','Poszt sikeresen frissítve.');
+      $this->session->set_flashdata('post_updated','Post has been updated');
       redirect('posts');
    }
 }

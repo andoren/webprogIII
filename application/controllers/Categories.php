@@ -6,7 +6,7 @@ class Categories extends CI_Controller{
         if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
-        $data['title']="Kategória készítése";
+        $data['title']="Create category";
         $this->form_validation->set_rules('name',"Kategória neve",'required');
         if($this->form_validation->run()===FALSE){
              $this->load->view("templates/header");
@@ -16,13 +16,13 @@ class Categories extends CI_Controller{
         }
         else{
             $this->category_model->add_category();
-            $this->session->set_flashdata('category_added','Kategória sikeresen hozzáadva.');
+            $this->session->set_flashdata('category_added','Category has been added');
             redirect('categories');
         }
 
     }
     public function index(){
-        $data['title']="Kategóriák";
+        $data['title']="Categories";
         $data['categories']=$this->category_model->get_categories();
         $this->load->view('templates/header');
         $this->load->view('categories/index',$data);

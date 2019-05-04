@@ -4,14 +4,14 @@
         <h1 class="text-center"><?=$title?></h1>
         <br>
         <div class="form-group">
-            <input type="text" name="username" class="form-control" placeholder="Felhasználónév" required="autofocus"     
+            <input type="text" name="username" class="form-control" placeholder="Username" required="autofocus"     
         </div>
         <br>
          <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="Jelszó" required="autofocus"    
+            <input type="password" name="password" class="form-control" placeholder="Password" required="autofocus"    
         </div>
         <br>
-        <button type="submit" class="btn btn-primary btn-block">Bejelentkezés</button>
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
     </div>
 </div>
 <?php echo form_close()?>

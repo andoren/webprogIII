@@ -31,11 +31,11 @@
                     <li><a href="https://github.com/andoren" target="_blank">Github oldalam</a></li>
                     <li><a href="https://uni-eszterhazy.hu/" target="_blank">EKE weboldal</a></li>
                     <?php if(!$this->session->userdata('logged_in')):?>
-                    <li><a href="<?php echo base_url()?>users/login" >Bejelentkezés</a></li>
+                    <li><a href="<?php echo base_url()?>users/login" >Log in</a></li>
                     <?php endif;?>
                     <?php if($this->session->userdata('logged_in')):?>
-                    <li><a href="<?php echo base_url()?>admin/index" >Szerkesztés</a></li>
-                    <li><a href="<?php echo base_url()?>users/logout" >Kijelentkezés</a></li>
+                    <li><a href="<?php echo base_url()?>admin/index" >Edit</a></li>
+                    <li><a href="<?php echo base_url()?>users/logout" >Log out</a></li>
                     
                     <?php endif;?>
                     
@@ -60,6 +60,9 @@
             <?php endif; ?>
             <?php if($this->session->flashdata('user_error_loggedin')):?>
                 <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('user_error_loggedin').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('menu_created')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('menu_created').'</p>' ?>
             <?php endif; ?>
 
 

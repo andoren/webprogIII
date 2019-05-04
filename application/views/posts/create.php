@@ -1,15 +1,15 @@
 <h2><?=$title?></h2>
 <?php echo form_open_multipart('posts/create');?>
   <div class="form-group">
-    <label>Cím</label>
+    <label>Title</label>
     <input type="text" class="form-control" name="title" placeholder="Add meg a poszt címét">
   </div>
   <div class="form-group">
-      <label>Szöveg</label>
+      <label>Body</label>
       <textarea  id="editor"  class="form-control" name="body"  placeholder="Add meg a poszt szövegét"></textarea>
   </div>
 <div class="form-group">
-    <label>Kategóriák</label>
+    <label>Categories</label>
     <select name="catid" class="form-control">
         <?php foreach ($categories as $category):?>
         <option value="<?php  echo $category['id']?>"><?php  echo $category['name']?></option>
@@ -17,10 +17,10 @@
     </select>
 </div>
 <div class="form-group">
-    <label>Thumbnail feltöltése</label>
+    <label>Thumbnail upload</label>
     <input type="file" name="userfile" size="20"/>
 </div>
-  <button type="submit" class="btn btn-primary">Hozzáadás</button>
+  <button type="submit" class="btn btn-primary">Create</button>
 </form>
 <br>
 <?php echo '<small class="validation-error">'.validation_errors()."</small>";?>

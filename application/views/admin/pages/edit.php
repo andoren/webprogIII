@@ -1,14 +1,14 @@
 <h2><?=$title?></h2>
 <?php echo form_open('pages/create'); ?>
   <div class="form-group">
-    <label>Oldal neve</label>
+    <label>Page name</label>
     <input type="text" class="form-control" name="title" readonly value="<?php echo $page['title']?>">
   </div>
   <div class="form-group">
-      <label>Szöveg</label>
+      <label>Page body</label>
       <textarea id="editor"  class="form-control" name="body"> </textarea>
   </div>
-<button type="submit" class="btn btn-primary">Módosítás</button>
+<button type="submit" class="btn btn-primary">Modify</button>
 <div id="data" style="display:none" >
     <?php echo $page['body'];?>
 </div>

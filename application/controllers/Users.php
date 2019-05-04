@@ -5,7 +5,7 @@ class Users extends CI_Controller {
                if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
-        $data['title']="Regisztrálás";
+        $data['title']="Registration";
         $data['privileges'] = $this->privilege_model->get_privileges();
         $this->form_validation->set_rules('name','Név','required');
         $this->form_validation->set_rules('username','Felhasználónév','required');
@@ -25,7 +25,7 @@ class Users extends CI_Controller {
         }
     }
     public function login(){
-        $data['title']="Bejelentkezés";
+        $data['title']="Log in";
         $this->form_validation->set_rules('username','Felhasználónév','required');
         $this->form_validation->set_rules('password','Jelszó','required');
         if($this->form_validation->run()===FALSE){
@@ -47,11 +47,11 @@ class Users extends CI_Controller {
                     
                 );
                 $this->session->set_userdata($user_data);
-                $this->session->set_flashdata('user_loggedin','Sikeres bejelentkezés. Most már tudod szerkeszteni az oldalt '.$username);
+                $this->session->set_flashdata('user_loggedin','You are logged in. Now you can edit the website '.$username);
                 redirect('posts');
             }
             else{
-               $this->session->set_flashdata('user_error_loggedin','Sikertelen bejelentkezés.'); 
+               $this->session->set_flashdata('user_error_loggedin','Error.'); 
                redirect('users/login');
             }
 
@@ -61,7 +61,7 @@ class Users extends CI_Controller {
         $this->session->unset_userdata('logged_in');
         $this->session->unset_userdata('user_id');
         $this->session->unset_userdata('username');
-        $this->session->set_flashdata('user_loggedout','Sikeres kijelentkezés. Viszlát!:)' );
+        $this->session->set_flashdata('user_loggedout','Logged out. Goodbye!:)' );
         redirect('users/login');
     }
 }   
