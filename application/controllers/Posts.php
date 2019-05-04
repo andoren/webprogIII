@@ -30,7 +30,7 @@ class Posts extends CI_Controller{
        if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
-        $data['title']='Poszt készítése';
+        $data['title']='Create post';
         $data['categories'] = $this->post_model->get_categories();
         $this->form_validation->set_rules('title','Cím','required');
         $this->form_validation->set_rules('body','Szöveg','required');

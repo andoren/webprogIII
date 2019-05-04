@@ -5,7 +5,7 @@
     <input type="text" class="form-control" name="title" placeholder="Add the page name here">
   </div>
   <div class="form-group">
-      <label>Page body/label>
+      <label>Page body</label>
       <textarea  id="editor"  class="form-control" name="body"></textarea>
   </div>
 <button type="submit" class="btn btn-primary">Create</button>

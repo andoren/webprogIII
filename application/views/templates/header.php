@@ -23,7 +23,15 @@
                   <ul class="nav navbar-nav">
                       <?php foreach ($menus as $menu):?>
                       <li>
-                          <a href="<?php echo $menu['link']?>" <?php if($menu['target'] == 1) echo 'target="_blank"' ?> > <?php echo $menu['name']; ?></a>
+                          <a href="
+                              <?php if($menu['target']==0)
+                              {
+                              echo base_url().$menu['page_slug'];
+                              
+                              }
+                              else {
+                                  echo $menu['link'];
+                          }?>" <?php if($menu['target'] == 1) echo 'target="_blank"' ?> > <?php echo $menu['name']; ?></a>
                       </li>
                       <?php endforeach;?>
                   </ul>

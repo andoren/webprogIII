@@ -22,7 +22,7 @@ class Menus extends CI_Controller{
                 $this->load->model('page_model');
         $data['pages'] = $this->page_model->get_pages();
         $this->form_validation->set_rules('name','Név','required');
-        $this->form_validation->set_rules('link','Link','required');
+
 
         if($this->form_validation->run()===FALSE){
             $this->load->view('templates/admin/header');

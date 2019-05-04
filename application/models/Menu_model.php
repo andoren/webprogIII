@@ -32,7 +32,7 @@ class Menu_model extends CI_Model{
         else {
           $data = array(
           'name'=>$this->input->post('name'),  
-          'link'=> base_url().$this->input->post('link'),  
+          'page_slug'=> $this->input->post('slug'),  
           'target'=>0     
         );
         }

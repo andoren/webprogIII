@@ -10,7 +10,10 @@
     </head>
     <body style="padding-top: 0px" >
         
-        <nav class="sidenav">
+        
+        
+        <div  class ="container">
+            <nav class="sidenav ">
               <div >
                   <ul>
                       <li style="padding-left: 0">
@@ -69,7 +72,9 @@
                                 </div>
                         </div> 
                     </li>
-                    <li>
+                    <?php 
+                    if($this->session->userdata('user_id')==1)
+                    echo'                    <li>
                         <div class="dropdown">
                          <a href="#" class="dropbtn">Users</a>
                                 <div class="dropdown-content">
@@ -77,14 +82,16 @@
                                     <a href="<?php echo base_url()?>admin/posts/update">Modify</a>
                                 </div>
                         </div> 
-                    </li>
+                    </li>';
+                    
+                    ?>
+
                     <li style=" position:absolute; bottom:0;" >
                         <a href="<?php echo base_url()?>users/logout" >Log out</a>
                     </li>                                       
                   </ul>               
               </div>
         </nav>
-        <div  class ="container">
             <?php if($this->session->flashdata('user_registered')):?>
                 <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>' ?>
             <?php endif; ?>
@@ -102,4 +109,10 @@
             <?php endif; ?>
             <?php if($this->session->flashdata('user_error_loggedin')):?>
                 <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('user_error_loggedin').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('error')):?>
+                <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('error').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('modified')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('modified').'</p>' ?>
             <?php endif; ?>

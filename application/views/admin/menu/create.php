@@ -6,7 +6,7 @@
   </div>
 <div class="form-group">
     <label>Page</label>
-    <select name="link" class="form-control">
+    <select name="slug" class="form-control">
         <?php foreach ($pages as $page):?>
         <option value="<?php  echo $page['title']?>"><?php  echo $page['title']?></option>
         <?php endforeach;?>

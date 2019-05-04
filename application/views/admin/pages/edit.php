@@ -1,8 +1,9 @@
 <h2><?=$title?></h2>
-<?php echo form_open('pages/create'); ?>
+<?php echo form_open('pages/update'); ?>
+<input type="hidden" name="id" value="<?php echo $page['id']?>">
   <div class="form-group">
     <label>Page name</label>
-    <input type="text" class="form-control" name="title" readonly value="<?php echo $page['title']?>">
+    <input type="text" class="form-control" name="title"  value="<?php echo $page['title']?>">
   </div>
   <div class="form-group">
       <label>Page body</label>
