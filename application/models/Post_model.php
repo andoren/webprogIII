@@ -5,9 +5,13 @@ class Post_Model extends CI_Model{
     }
     public function get_Posts($slug=FALSE){
         if($slug === FALSE){
-            $this->db->order_by('posts.id','DESC');
-            $this->db->join('categories','categories.id = posts.catid');
-            $query = $this->db->get('posts');
+            $this->db->select('p.id,p.thumbimg,p.title,p.body,p.slug,p.created_by,p.created_at,u.name,c.name as catname, c.id as cid',false);
+            $this->db->from('posts as p');
+            $this->db->join('users as u','u.id = p.created_by','left');
+            $this->db->join('categories as c','c.id = p.catid');
+            $this->db->order_by('p.id','DESC');
+            $query = $this->db->get();
+            return $query->result_array() ;
             return $query->result_array();
         }
         $query = $this->db->get_where('posts',array('slug'=>$slug));        

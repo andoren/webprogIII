@@ -38,10 +38,13 @@ class Menus extends CI_Controller{
         
     }
     public function edit($name){
-        die($name);
         $data['title'] = "Modify menu";
         $this->load->model('menu_model');
         $data['menu'] = $this->menu_model->get_menus($name);
+        if(empty($data['menu'])){
+            
+            show_404();
+        }  
         $this->load->model('page_model');
         $data['pages'] = $this->page_model->get_pages();
         $this->load->view('templates/admin/header');

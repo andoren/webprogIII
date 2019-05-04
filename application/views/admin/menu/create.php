@@ -8,7 +8,7 @@
     <label>Page</label>
     <select name="slug" class="form-control">
         <?php foreach ($pages as $page):?>
-        <option value="<?php  echo $page['title']?>"><?php  echo $page['title']?></option>
+        <option value="<?php  echo $page['slug']?>"><?php  echo $page['title']?></option>
         <?php endforeach;?>
     </select>
 </div>

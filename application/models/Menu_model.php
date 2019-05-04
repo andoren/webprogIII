@@ -14,7 +14,7 @@ class Menu_model extends CI_Model{
         else{
             $this->db->order_by('created_at','ASC');
             $query = $this->db->get_where('menus',array('deleted'=>0,'name'=>$name));
-            die($name);
+            
             $data = $query->row_array();
         }
         return $data;

@@ -52,6 +52,9 @@ class Pages extends CI_Controller{
         $this->load->view('templates/admin/footer');
     }
     public function update(){
+               if(!$this->session->userdata('logged_in')){
+           redirect('users/login');
+       }
         $this->load->model('page_model');
         if($this->page_model->update_page()){
             $this->session->set_flashdata('modified','Page has been modified');
@@ -75,7 +78,9 @@ class Pages extends CI_Controller{
     
    }
    public function delete(){
-      
+             if(!$this->session->userdata('logged_in')){
+           redirect('users/login');
+       }
         $this->load->model('page_model');
         if($this->page_model->delete_page()){
             $this->session->set_flashdata('deleted','Page has been deleted');
