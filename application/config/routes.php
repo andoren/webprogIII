@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['admin']='admin/index';
+$route['admin/categories/index']='categories/index_admin';
 $route['admin/menu/edit/(:any)'] = 'menus/edit/$1';
 $route['admin/menu/create'] = 'menus/create';
 $route['admin/menu'] = 'menus/index';
@@ -10,9 +11,10 @@ $route['admin/pages/create']='pages/create';
 $route['admin/pages']='pages/index';
 $route['admin/posts']='admin/posts';
 $route['admin/posts/create']='posts/create';
-$route['admin/posts/edit/(:any)']='posts/edit/$1';
 $route['posts/create']='posts/create';
 $route['posts/update']='posts/update';
+$route['posts/edit'] = 'posts/edit';
+$route['posts/delete'] = 'posts/delete';
 $route['posts/(:any)'] = 'posts/view/$1';
 $route['posts']="posts/index";
 $route['categories']='categories/index';

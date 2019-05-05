@@ -9,7 +9,7 @@
         <small class="post-date">Posted at: <?php echo $post['created_at'];?> a(z) <strong><a href="<?php echo base_url().'categories/posts/'.$post['id']?>"><?php echo $post['catname'] ?></a></strong>-ban/ben</small>
         <br>
         <div class="post-body">
-            <?php echo word_limiter($post['body'],70);?>
+            <?php echo htmlspecialchars(word_limiter($post['body'],70));?>
         </div>
         <br>
         <br>

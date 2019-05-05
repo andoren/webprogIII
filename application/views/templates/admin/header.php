@@ -8,12 +8,9 @@
     <script src="<?php echo base_url();?>assets/ckeditor/ckeditor.js"></script>
     <title>Misi első blog weboldala</title>             
     </head>
-    <body style="padding-top: 0px" >
-        
-        
-        
-        <div  class ="container">
-            <nav class="sidenav ">
+    <body style="padding-top: 0px" >       
+        <div class="wrapper">
+             <div class="sidenav ">
               <div >
                   <ul>
                       <li style="padding-left: 0">
@@ -49,8 +46,8 @@
                        <div class="dropdown">
                          <a href="#" class="dropbtn">Categories</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Create</a>
-                                    <a href="<?php echo base_url()?>admin/posts/update">Modify</a>
+                                    <a href="<?php echo base_url()?>categories/add">Create</a>
+                                    <a href="<?php echo base_url()?>admin/categories/index">Modify</a>
                                 </div>
                         </div> 
                     </li>
@@ -91,8 +88,10 @@
                     </li>                                       
                   </ul>               
               </div>
-        </nav>
-            <?php if($this->session->flashdata('user_registered')):?>
+             </div>
+           
+        <div class="main">
+             <?php if($this->session->flashdata('user_registered')):?>
                 <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>' ?>
             <?php endif; ?>
             <?php if($this->session->flashdata('post_created')):?>

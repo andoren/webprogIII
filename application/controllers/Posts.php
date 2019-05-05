@@ -41,14 +41,14 @@ class Posts extends CI_Controller{
         }
         else{
                 $config['upload_path']          = './assets/images/posts/thumbnails/';
-                $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 100;
+                $config['allowed_types']        = 'gif|jpg|png|PNG|JPG';
+                $config['max_size']             = 2000;
                 $config['max_width']            = 2000;
                 $config['max_height']           = 2000;
 
                 $this->load->library('upload', $config);
                 if(!$this->upload->do_upload()){
-                    $errors = array('error' => $this->upload->display_errors());                   
+                    die(var_dump(array('error' => $this->upload->display_errors())));                   
                     $post_image = 'noimage.jpg';
                 }
                 else{
@@ -56,19 +56,22 @@ class Posts extends CI_Controller{
                     $post_image = $_FILES['userfile']['name'];
                 }
             $this->post_model->create_post($post_image);   
-            $this->session->set_flashdata('post_created','Poszt sikeresen hozzáadva.');
+            $this->session->set_flashdata('post_created','Post has been added');
             redirect('posts');  
         }
 
    }
-   public function delete($id){
+   public function delete(){
+       $id = $this->input->post('id');
        $this->post_model->delete_post($id);  
        redirect('posts');
    }
-   public function edit($slug){
+   public function edit(){
        if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
+        $slug = $this->input->post('slug');
+
         $data['post'] = $this->post_model->get_posts($slug);
         if(empty($data['post'])){
             show_404();

@@ -19,8 +19,7 @@
 }
 .sidenav {
   height: 100%;
-  width: 13%;
-  min-width: 150px;
+  width:13%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -28,6 +27,7 @@
   background-color: #202020;;
   overflow-x: hidden;
   padding-top: 20px;
+  box-shadow:0 16px 38px -12px rgba(0,0,0,.56),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2);
 }
 .sidenav ul{
     padding-left: 0px;
@@ -90,4 +90,10 @@
 @media screen and (max-width: 800px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 15px;}
+}
+.main{
+    position: relative;
+    float:  right;
+    width: calc(100% - 15%);
+    padding-right: 30px;
 }

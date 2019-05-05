@@ -11,7 +11,6 @@ class Post_Model extends CI_Model{
             $this->db->join('categories as c','c.id = p.catid');
             $this->db->order_by('p.id','DESC');
             $query = $this->db->get();
-            return $query->result_array() ;
             return $query->result_array();
         }
         $query = $this->db->get_where('posts',array('slug'=>$slug));        
@@ -53,9 +52,10 @@ class Post_Model extends CI_Model{
         return $query->result_array();
     }
     public function get_posts_by_category($id){
-            $this->db->order_by('posts.id','DESC');
-            $this->db->join('categories','categories.id = posts.catid');
-            $query = $this->db->get_where('posts',array('categories.id'=>$id));
+            $this->db->select('p.id,p.thumbimg,p.title,p.body,p.slug,p.created_by,p.created_at,c.name as catname, c.id as cid',false);
+            $this->db->join('categories as c','c.id = p.catid');
+            $this->db->order_by('p.id','DESC');
+            $query = $this->db->get_where('posts as p',array('p.catid'=>$id));
             return $query->result_array();
     }
 }
