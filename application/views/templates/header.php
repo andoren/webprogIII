@@ -50,7 +50,7 @@
                   </ul>               
               </div>
         </nav>
-        <div  class ="container">
+        <div  class ="container-fluid">
             <?php if($this->session->flashdata('user_registered')):?>
                 <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>' ?>
             <?php endif; ?>

@@ -14,7 +14,7 @@
 </div>
   <div class="form-group">
       <label>External ?</label>
-      <input type="checkbox" class="form-control" name="target" value="target">
+      <input style="margin-left: 10px" type="checkbox"  name="target" value="target">
   </div>
   <div class="form-group">
       <label>External link</label>

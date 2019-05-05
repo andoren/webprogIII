@@ -24,12 +24,12 @@
       <td><?php echo $menu['target']; ?></td>
       <td><?php echo $menu['link']; ?></td>
       <td><?php echo $menu['page_slug']; ?></td>
-      <td>  <?php echo form_open('categories/edit'); ?>
+      <td>  <?php echo form_open('menus/edit'); ?>
             <input type="hidden" name="id" Value ="<?php echo $menu['id']?>">  
             <input type="submit" value="Edit" class="btn btn-success pull-left">
             <?php echo form_close() ?>
       </td>
-      <td><?php echo form_open('categories/delete'); ?>
+      <td><?php echo form_open('menus/delete'); ?>
             <input type="hidden" name="id" Value ="<?php echo $menu['id']?>">  
             <input  type="submit" value="Delete" class="btn btn-danger pull-left">
           <?php echo form_close() ?></td>

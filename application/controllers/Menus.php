@@ -37,10 +37,14 @@ class Menus extends CI_Controller{
         }
         
     }
-    public function edit($name){
+    public function edit(){
+        if(!$this->session->userdata('logged_in')){
+           redirect('users/login');
+        }
         $data['title'] = "Modify menu";
+        $id = $this->input->post('id');
         $this->load->model('menu_model');
-        $data['menu'] = $this->menu_model->get_menus($name);
+        $data['menu'] = $this->menu_model->get_menus($id);
         if(empty($data['menu'])){
             
             show_404();
@@ -56,16 +60,27 @@ class Menus extends CI_Controller{
     public function delete(){
         if(!$this->session->userdata('logged_in')){
            redirect('users/login');
-       }
+        }
+        
+        $this->load->model('menu_model');
+        
+        $result = $this->menu_model->delete_menu();
+        if($result){
+            $this->session->set_flashdata('post_updated','Menu has been deleted');
+        }else{
+            $this->session->set_flashdata('error','There was an error while deleting the menu.');
+        }
+        redirect('admin/menu');
        
     }
     public function update(){
         if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
-      $this->post_model->update_post();
+       $this->load->model('menu_model');
+      $this->menu_model->update_menu();
       $this->session->set_flashdata('post_updated','Menu has been updated');
-      redirect('menu');
+      redirect('admin/menu');
        
     }
     

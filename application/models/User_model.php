@@ -21,6 +21,38 @@ class User_model extends CI_model{
             return false;
         }
     }
+    public function get_users($id = FALSE){
+        if($id===FALSE){
+            $this->db->join('privileges as p','p.id = privid');
+            $this->db->select('u.id,u.name as fullname,privid,email,username,created_at,p.name');
+            $query = $this->db->get('users as u');
+            return $query->result_array();
+        }else{
+            $this->db->join('privileges as p','p.id = privid');
+            $this->db->select('u.id,u.name as fullname,privid,email,username,created_at,p.name');
+            $query = $this->db->get_where('users as u',array('u.id'=>$id));
+                          
+            return $query->row_array();
+        }
+    }
+    public function update_user($password){
+        $data=array(
+          'name'=>$this->input->post('name'),
+          'username'=>$this->input->post('username'),
+          'email'=>$this->input->post('email'),
+          'password'=>$password,
+          'privid'=>$this->input->post('privid')  
+        );
+        $this->db->set($data);
+        $this->db->where('id', $this->input->post('id'));
+        
+        return $this->db->update('users');
+    }
+    public function delete_user(){
+        $this->db->where('id',$this->input->post('id'));
+
+        return $this->db->delete('users');
+    }
     
 }
 /* 

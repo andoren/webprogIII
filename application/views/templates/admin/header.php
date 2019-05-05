@@ -71,12 +71,12 @@
                     </li>
                     <?php 
                     if($this->session->userdata('user_id')==1)
-                    echo'                    <li>
+                    echo'<li>
                         <div class="dropdown">
                          <a href="#" class="dropbtn">Users</a>
                                 <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Register</a>
-                                    <a href="<?php echo base_url()?>admin/posts/update">Modify</a>
+                                    <a href="'.base_url().'admin/users/create">Register</a>
+                                    <a href="'.base_url().'admin/users/index">Modify</a>
                                 </div>
                         </div> 
                     </li>';
