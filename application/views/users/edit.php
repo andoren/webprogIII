@@ -27,7 +27,7 @@
 </div>
 
     <br>
-    <button type="submit" class ="btn btn-primary btn-block">Create</button>
+    <button type="submit" class ="btn btn-primary btn-block">Modify</button>
 </div>
 </div>
 <?php echo form_close();?>

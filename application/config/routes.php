@@ -1,5 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+$route['admin/images/delete']='images/delete';
+$route['admin/images/add']='images/add';
+$route['admin/images/index']='images/index';
 $route['admin/users/create']='users/register';
 $route['admin/users/index']='users/index';
 $route['admin']='admin/index';

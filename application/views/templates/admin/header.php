@@ -3,7 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
     <script src="<?php echo base_url();?>assets/ckeditor/ckeditor.js"></script>
     <title>Misi első blog weboldala</title>             
@@ -22,7 +22,7 @@
                         <hr style="color:white;">
                     </li>
                     <li>
-                      <a href="<?php echo base_url()?>/admin">Home</a>
+                      <a href="<?php echo base_url()?>admin">Home</a>
                     </li>
                     <li>
                         <div class="dropdown">
@@ -61,13 +61,7 @@
                         </div> 
                     </li>
                     <li>
-                       <div class="dropdown">
-                         <a href="#" class="dropbtn">Galery</a>
-                                <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Add</a>
-                                    <a href="<?php echo base_url()?>admin/posts/update">Modify</a>
-                                </div>
-                        </div> 
+                        <a href="<?php echo base_url()?>admin/images/index">Gallery</a>
                     </li>
                     <?php 
                     if($this->session->userdata('user_id')==1)
@@ -114,4 +108,7 @@
             <?php endif; ?>
             <?php if($this->session->flashdata('modified')):?>
                 <?php echo '<p class="alert alert-success">'.$this->session->flashdata('modified').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('success')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('success').'</p>' ?>
             <?php endif; ?>

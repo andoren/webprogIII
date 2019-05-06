@@ -47,8 +47,7 @@ class Posts extends CI_Controller{
                 $config['max_height']           = 2000;
 
                 $this->load->library('upload', $config);
-                if(!$this->upload->do_upload()){
-                    die(var_dump(array('error' => $this->upload->display_errors())));                   
+                if(!$this->upload->do_upload()){              
                     $post_image = 'noimage.jpg';
                 }
                 else{

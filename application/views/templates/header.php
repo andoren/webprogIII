@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
     <title>Misi első blog weboldala</title>
@@ -13,17 +13,17 @@
     </head>
     <body style="padding-top: 0px" >
         
-        <nav class="navbar navbar-default ">
-              <div class="container">
-                <div class="navbar-header">
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+              <div class="container-fluid">
+                <div class="navbar-brand">
                   <a href="<?php echo base_url(); ?>" class="navbar-brand">Misi blog</a>
 
                 </div>
                 
-                  <ul class="nav navbar-nav">
+                  <ul class="navbar-nav">
                       <?php foreach ($menus as $menu):?>
-                      <li>
-                          <a href="
+                      <li class="nav-item">
+                          <a class="nav-link" href="
                               <?php if($menu['target']==0)
                               {
                               echo base_url().$menu['page_slug'];
@@ -35,22 +35,23 @@
                       </li>
                       <?php endforeach;?>
                   </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="https://github.com/andoren" target="_blank">Github oldalam</a></li>
-                    <li><a href="https://uni-eszterhazy.hu/" target="_blank">EKE weboldal</a></li>
+
+                  <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-link"><a class="nav-link" href="https://github.com/andoren" target="_blank">Github oldalam</a></li>
+                    <li class="nav-link"><a class="nav-link" href="https://uni-eszterhazy.hu/" target="_blank">EKE weboldal</a></li>
                     <?php if(!$this->session->userdata('logged_in')):?>
-                    <li><a href="<?php echo base_url()?>users/login" >Log in</a></li>
+                    <li class="nav-link"><a class="nav-link" href="<?php echo base_url()?>users/login" >Log in</a></li>
                     <?php endif;?>
                     <?php if($this->session->userdata('logged_in')):?>
-                    <li><a href="<?php echo base_url()?>admin/index" >Edit</a></li>
-                    <li><a href="<?php echo base_url()?>users/logout" >Log out</a></li>
+                    <li class="nav-link"><a class="nav-link" href="<?php echo base_url()?>admin" >Edit</a></li>
+                    <li class="nav-link"><a class="nav-link" href="<?php echo base_url()?>users/logout" >Log out</a></li>
                     
                     <?php endif;?>
                     
                   </ul>               
               </div>
         </nav>
-        <div  class ="container-fluid">
+        <div style="margin-top:20px"  class ="container">
             <?php if($this->session->flashdata('user_registered')):?>
                 <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>' ?>
             <?php endif; ?>
