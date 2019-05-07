@@ -1,0 +1,280 @@
+%PDF-1.3
+1 0 obj
+<< /Type /Catalog
+/Outlines 2 0 R
+/Pages 3 0 R >>
+endobj
+2 0 obj
+<< /Type /Outlines /Count 0 >>
+endobj
+3 0 obj
+<< /Type /Pages
+/Kids [6 0 R
+]
+/Count 1
+/Resources <<
+/ProcSet 4 0 R
+>>
+/MediaBox [0.000 0.000 612.000 792.000]
+ >>
+endobj
+4 0 obj
+[/PDF /Text ]
+endobj
+5 0 obj
+<<
+/Creator (DOMPDF)
+/CreationDate (D:20190507205608+02'00')
+/ModDate (D:20190507205608+02'00')
+>>
+endobj
+6 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Annots [ 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R ]
+/Contents 7 0 R
+>>
+endobj
+7 0 obj
+<<
+/Length 9851 >>
+stream
+
+0.000 0.000 0.000 rg
+BT 34.016 777.060 Td /F 18.0 Tf  [(An AI used art to control monkeys’ brain cells)] TJ ET
+BT 34.016 792.000 Td /F 10.7 Tf  [(Posted at: 2019-05-05 14:46:07)] TJ ET
+BT 34.016 780.000 Td /F 12.0 Tf  [(New artwork created by artificial intelligence does weird things to the primate brain.)] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(When shown to macaques, AI-generated images purposefully caused nerve cells in the monkeys’ brains to fire more than pictures of real-world objects. The AI could also design patterns that activated specific neurons while suppressing others, researchers report in the May 3 )] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(Science)] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(.)] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(This )] TJ ET
+0.000 0.000 0.800 rg
+BT 34.016 792.000 Td /F 12.0 Tf  [(unprecedented control over neural activity using images)] TJ ET
+0.000 0.000 0.800 RG
+0.24 w 0 J [  ] 0 d
+34.016 778.920 m 34.016 778.920 l S
+0.000 0.000 0.000 rg
+BT 34.016 792.000 Td /F 12.0 Tf  [(may lead to new kinds of neuroscience experiments or treatments for mental disorders. The AI’s ability to play the primate brain like a fiddle also offers insight into how closely AIs can emulate brain function.)] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(The AI responsible for the new mind-bending images is an artificial neural network — a computer model composed of virtual neurons — modeled after the )] TJ ET
+0.000 0.000 0.800 rg
+BT 34.016 792.000 Td /F 12.0 Tf  [(ventral stream)] TJ ET
+0.24 w 0 J [  ] 0 d
+34.016 778.920 m 34.016 778.920 l S
+0.000 0.000 0.000 rg
+BT 34.016 792.000 Td /F 12.0 Tf  [(. This is a neural pathway in the brain involved in vision \()] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(SN Online: 8/12/09)] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(\). The AI learned to “see” by studying a library of about 1.3 million labeled images. Researchers then instructed the AI to design pictures that would affect specific ventral stream neurons in the brain.)] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(Viewing any image triggers some kind of neural activity in a brain. But neuroscientist Kohitij Kar of MIT and colleagues wanted to see whether the AI’s deliberately designed images could induce specific neural responses of the team’s choosing. The researchers showed these images to three macaques fitted with neuron-monitoring microelectrodes. )] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(In one experiment, the AI aimed to create patterns that would activate neurons at a specific site in the ventral stream as much as possible, regardless of how it affected other neurons. In 40 of the 59 neural sites tested, AI-made pictures caused neurons to fire more than any image of a real-world object, such as a bear, a car or a face. The AI’s images generally caused neurons to fire 39 percent more than their maximum response to real-world images. Even when the monkeys were shown patterns previously designed by researchers specifically to trigger ventral stream neurons, the AI designs made these neurons fire at higher rates.)] TJ ET
+BT 34.016 792.000 Td /F 12.0 Tf  [(ez egy kép)] TJ ET
+0.500 0.500 0.500 rg
+BT 34.016 754.000 Td /F 8.0 Tf  [(Image not found or type unknown)] TJ ET
+0.000 0.000 0.000 rg
+BT 34.016 732.000 Td /F 12.0 Tf  [(In another test, the AI crafted patterns meant to make the neurons at one target site go wild, while minimizing the activity of others. For 25 of 33 sites, AI-created images isolated neural activity to the target site significantly better than real-world images. Although this manipulation is not yet perfect, future AIs with more sophisticated designs and more training data may wield finer control, says study coauthor Pouya Bashivan, a computational neuroscientist at MIT.  )] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(“This is magnificent technical progress,” says Arash Afraz, a neuroscientist at the National Institute of Mental Health in Bethesda, Md., not involved in the study.)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(In neuroscience experiments, researchers “may want to induce a specific pattern of activity in the brain” to learn what different neurons are responsible for, Afraz says. “The direct way of doing that is to roll your sleeves up, open up the skull and stick something in there,” like electrodes. “Now, we have a new tool in our toolbox” to noninvasively tinker with neurons in ways that weren’t possible before.)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(AI-rendered images that orchestrate neural activity may also lead to new treatments for mental health problems like post-traumatic stress disorder, anxiety or “anything that would have to do with mood,” Bashivan says. Similar to the way that people use )] TJ ET
+0.000 0.000 0.800 rg
+BT 34.016 732.000 Td /F 12.0 Tf  [(light therapy boxes to assuage seasonal affective disorder)] TJ ET
+0.24 w 0 J [  ] 0 d
+34.016 718.920 m 34.016 718.920 l S
+0.000 0.000 0.000 rg
+BT 34.016 732.000 Td /F 12.0 Tf  [(\()] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(SN: 4/23/05, p. 261)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(\) or look at )] TJ ET
+0.000 0.000 0.800 rg
+BT 34.016 732.000 Td /F 12.0 Tf  [(peaceful nature scenes to calm down)] TJ ET
+0.24 w 0 J [  ] 0 d
+34.016 718.920 m 34.016 718.920 l S
+0.000 0.000 0.000 rg
+BT 34.016 732.000 Td /F 12.0 Tf  [(\()] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(SN: 11/10/18, p. 16)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(\), people may someday be soothed by gazing upon images that an AI tailor-made to boost mood.)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(These experiments not only demonstrate a new technique to manipulate neurons, but also provide new insight into the nature of AI. Artificial neural networks are neuroscientists’ best computer models of the ventral stream. The virtual neurons in these computer programs are arranged a similar architecture as biological ones, and these AIs are great at recognizing objects in photographs. But there’s been some debate about how truly brainlike these AIs are, in terms of how they process and understand visual inputs, says Ed Connor, a neuroscientist at Johns Hopkins University not involved in the work.)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(The fact that monkey neurons responded to AI-created images just as the AI intended suggests that this computer program does indeed understand visual information in a way that’s similar to the primate brain, Connor says. “This nails it in a way that will convince skeptics, including myself.”)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(If artificial neural networks actually “see” in a way that closely mimics the brain, studying these AI programs may help scientists better understand human vision. Researchers of the future might forgo monkeys and mice, and probe )] TJ ET
+0.000 0.000 0.800 rg
+BT 34.016 732.000 Td /F 12.0 Tf  [(neural goings-on inside AIs instead)] TJ ET
+0.24 w 0 J [  ] 0 d
+34.016 718.920 m 34.016 718.920 l S
+0.000 0.000 0.000 rg
+BT 34.016 732.000 Td /F 12.0 Tf  [(\()] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(SN: 6/9/18, p. 14)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(\).)] TJ ET
+BT 34.016 732.000 Td /F 12.0 Tf  [(Experimenting on such virtual neurons could offer “a way of letting you do any dream experiment you would like on a system that’s completely accessible in a way that the brain isn’t,” Connor says.)] TJ ET
+0.000 0.000 0.000 RG
+34.016 726.000 m 577.984 726.000 l 577.234 725.250 l 34.766 725.250 l  f
+0.160 0.160 0.160 rg
+0.160 0.160 0.160 RG
+34.016 724.500 m 577.984 724.500 l 577.234 725.250 l 34.766 725.250 l  f
+577.984 726.000 m 577.984 724.500 l 577.234 725.250 l 577.234 725.250 l  f
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+34.016 726.000 m 34.016 724.500 l 34.766 725.250 l 34.766 725.250 l  f
+0.800 0.800 0.800 rg
+35.516 718.500 540.969 0.000 re f
+0.600 0.600 0.600 RG
+0.75 w 0 J [  ] 0 d
+35.891 718.875 540.219 -0.750 re S
+0.000 0.000 0.000 rg
+BT 581.734 716.250 Td /F 12.0 Tf  [(Delete)] TJ ET
+0.800 0.800 0.800 rg
+35.516 718.500 540.969 0.000 re f
+0.75 w 0 J [  ] 0 d
+35.891 718.875 540.219 -0.750 re S
+0.000 0.000 0.000 rg
+BT 581.734 716.250 Td /F 12.0 Tf  [(Edit)] TJ ET
+0.000 0.000 0.000 RG
+34.016 669.300 m 577.984 669.300 l 577.234 668.550 l 34.766 668.550 l  f
+0.160 0.160 0.160 rg
+0.160 0.160 0.160 RG
+34.016 667.800 m 577.984 667.800 l 577.234 668.550 l 34.766 668.550 l  f
+577.984 669.300 m 577.984 667.800 l 577.234 668.550 l 577.234 668.550 l  f
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+34.016 669.300 m 34.016 667.800 l 34.766 668.550 l 34.766 668.550 l  f
+BT 34.016 653.760 Td /F 14.0 Tf  [(Comments)] TJ ET
+BT 34.016 653.760 Td /F 12.0 Tf  [(No comments)] TJ ET
+34.016 653.760 m 577.984 653.760 l 577.234 653.010 l 34.766 653.010 l  f
+0.160 0.160 0.160 rg
+0.160 0.160 0.160 RG
+34.016 652.260 m 577.984 652.260 l 577.234 653.010 l 34.766 653.010 l  f
+577.984 653.760 m 577.984 652.260 l 577.234 653.010 l 577.234 653.010 l  f
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+34.016 653.760 m 34.016 652.260 l 34.766 653.010 l 34.766 653.010 l  f
+BT 34.016 638.220 Td /F 14.0 Tf  [(Add Comment)] TJ ET
+BT 34.016 638.220 Td /F 12.0 Tf  [(Name)] TJ ET
+1.000 1.000 1.000 rg
+35.516 636.720 148.500 0.000 re f
+0.600 0.600 0.600 RG
+0.75 w 0 J [  ] 0 d
+35.891 637.095 147.750 -0.750 re S
+0.000 0.000 0.000 rg
+BT 34.016 638.220 Td /F 12.0 Tf  [(E-mail)] TJ ET
+1.000 1.000 1.000 rg
+35.516 636.720 148.500 0.000 re f
+0.75 w 0 J [  ] 0 d
+35.891 637.095 147.750 -0.750 re S
+0.000 0.000 0.000 rg
+BT 34.016 638.220 Td /F 12.0 Tf  [(Body)] TJ ET
+1.000 1.000 1.000 rg
+35.516 596.220 540.969 40.500 re f
+0.75 w 0 J [  ] 0 d
+35.891 596.595 540.219 39.750 re S
+q
+36.266 596.970 539.469 39.000 re W n
+Q
+0.800 0.800 0.800 rg
+35.516 594.720 540.969 0.000 re f
+0.600 0.600 0.600 RG
+0.75 w 0 J [  ] 0 d
+35.891 595.095 540.219 -0.750 re S
+0.000 0.000 0.000 rg
+BT 581.734 592.470 Td /F 12.0 Tf  [(Comment)] TJ ET
+endstream
+endobj
+8 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 9 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 34.0157 792.0000 34.0157 792.0000 ]
+>>
+endobj
+9 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://science.sciencemag.org/cgi/doi/10.1126/science.aav9436)
+>>
+endobj
+10 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 11 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 34.0157 792.0000 34.0157 792.0000 ]
+>>
+endobj
+11 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://www.sciencenews.org/article/brain-doesnâ€™t-sort-visual-cues-alone)
+>>
+endobj
+12 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 13 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 34.0157 732.0000 34.0157 732.0000 ]
+>>
+endobj
+13 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://www.sciencenews.org/article/mood-brighteners-light-therapy-gets-nod-depression-buster?mode=magazine&context=502)
+>>
+endobj
+14 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 15 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 34.0157 732.0000 34.0157 732.0000 ]
+>>
+endobj
+15 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://www.sciencenews.org/article/virtual-reality-therapy-has-real-life-benefits-some-mental-disorders)
+>>
+endobj
+16 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 17 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 34.0157 732.0000 34.0157 732.0000 ]
+>>
+endobj
+17 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://www.sciencenews.org/article/AI-uses-mammal-brain-wiring-navigate)
+>>
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000009 00000 n 
+0000000074 00000 n 
+0000000120 00000 n 
+0000000251 00000 n 
+0000000280 00000 n 
+0000000394 00000 n 
+0000000503 00000 n 
+0000010406 00000 n 
+0000010530 00000 n 
+0000010643 00000 n 
+0000010769 00000 n 
+0000010895 00000 n 
+0000011021 00000 n 
+0000011192 00000 n 
+0000011318 00000 n 
+0000011474 00000 n 
+0000011600 00000 n 
+trailer
+<<
+/Size 18
+/Root 1 0 R
+/Info 5 0 R
+>>
+startxref
+11724
+%%EOF

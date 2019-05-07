@@ -15,6 +15,10 @@ class Admin extends CI_Controller{
     public function posts(){
         $data['title']='Posts';
         $data['posts'] = $this->post_model->get_posts();
+        $this->load->model('category_model');
+        foreach ($data['posts'] as $key => $post){
+            $data['posts'][$key]['categories'] = $this->category_model->get_postcategories($post['id']);
+        }        
         $this->load->view('templates/admin/header');
         $this->load->view('admin/posts',$data);
         $this->load->view('templates/admin/footer');

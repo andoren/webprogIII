@@ -1,7 +1,7 @@
 
 <?php echo validation_errors();?>
 <?php echo form_open('users/update');?>
-<div class="col-md-6 col-md-offset-3">
+<div >
     <h1 class="text-center"><?=$title?></h1>
 <div class="form-group">
 

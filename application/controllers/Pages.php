@@ -69,7 +69,7 @@ class Pages extends CI_Controller{
        if(!$this->session->userdata('logged_in')){
            redirect('users/login');
        }
-        $data['title']='Oldalak';
+        $data['title']='Pages';
         $this->load->model('page_model');
         $data['pages'] = $this->page_model->get_pages();
         $this->load->view('templates/admin/header');

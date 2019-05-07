@@ -99,7 +99,7 @@
 .main{
     position: relative;
     float:  right;
-    width: calc(100% - 15%);
+
     padding-right: 30px;
 }
 

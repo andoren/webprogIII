@@ -4,16 +4,21 @@ class Posts extends CI_Controller{
     public function index(){
         $data['title']='Most recent posts';
         $data['posts'] = $this->post_model->get_posts();
+        $this->load->model('category_model');
+        foreach ($data['posts'] as $key => $post){
+            $data['posts'][$key]['categories'] = $this->category_model->get_postcategories($post['id']);
+        }        
         $this->load->model('menu_model');
         $headerdata['menus'] = $this->menu_model->get_menus();
         $this->load->view('templates/header',$headerdata);
         $this->load->view('posts/index',$data);
-        $this->load->view('templates/footer');
-        
+        $this->load->view('templates/footer');       
     }
    public function view($slug = NULL){
-
         $data['post'] = $this->post_model->get_posts($slug);
+        $postid = $data['post']['id'];
+        $this->load->model('comment_model');
+        $data['comments'] = $this->comment_model->get_comments($postid);
         if(empty($data['post'])){
             show_404();
         }     
@@ -22,8 +27,7 @@ class Posts extends CI_Controller{
         $headerdata['menus'] = $this->menu_model->get_menus();
         $this->load->view('templates/header',$headerdata);
         $this->load->view('posts/view',$data);
-        $this->load->view('templates/footer');
-        
+        $this->load->view('templates/footer');       
     }
     
    public function create(){
@@ -40,6 +44,10 @@ class Posts extends CI_Controller{
             $this->load->view('templates/admin/footer');           
         }
         else{
+            if(empty($this->input->post('check_list'))){
+            $this->session->set_flashdata('error','You must select atlest one category');
+            redirect('admin/posts/create');  
+            }
                 $config['upload_path']          = './assets/images/posts/thumbnails/';
                 $config['allowed_types']        = 'gif|jpg|png|PNG|JPG';
                 $config['max_size']             = 2000;
@@ -91,5 +99,19 @@ class Posts extends CI_Controller{
       $this->post_model->update_post();
       $this->session->set_flashdata('post_updated','Post has been updated');
       redirect('posts');
+   }
+   public function createpost_csv(){
+       $row = 1;
+        if (($handle = fopen(base_url()."assets/csv/temp.csv", "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            $num = count($data);
+        echo "<p> $num fields in line $row: <br /></p>\n";
+        $row++;
+        for ($c=0; $c < $num; $c++) {
+            echo $data[$c] . "<br />\n";
+        }
+    }
+    fclose($handle);
+    }   
    }
 }

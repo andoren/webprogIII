@@ -13,9 +13,16 @@ class Category_model extends CI_Model{
     public function get_Categories(){
         $this->db->order_by('c.id');
         $this->db->select('c.id,c.name,c.created_at,c.created_by,u.name as fullname',false);
-        $this->db->join('users as u','u.id = c.created_by','left');
-
+        $this->db->join('users as u','u.id = c.created_by','left');        
         $query = $this->db->get('categories as c');
+        return $query->result_array();
+    }
+    public function get_postcategories($id){
+        $this->db->order_by('pc.catid');
+        $this->db->select('c.id, c.name');
+        $this->db->join('categories c','c.id = pc.catid');
+        $this->db->where('pc.postid',$id);
+        $query = $this->db->get('postcategories as pc');
         return $query->result_array();
     }
     public function get_Category($id){

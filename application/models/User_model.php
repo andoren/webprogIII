@@ -13,9 +13,12 @@ class User_model extends CI_model{
     public function login($username,$password){
         $this->db->where('username',$username);
         $this->db->where('password',$password);
-        $result = $this->db->get('users');
+        $this->db->join('privileges as p','p.id = privid');
+        $this->db->select('u.id,u.name as fullname,privid,email,username,created_at,p.name as pname');      
+        $result = $this->db->get('users as u');
         if($result->num_rows()==1){
-            return $result->row(0)->id;
+
+            return $result->row_array();
         }
         else{
             return false;
@@ -23,9 +26,9 @@ class User_model extends CI_model{
     }
     public function get_users($id = FALSE){
         if($id===FALSE){
-            $this->db->join('privileges as p','p.id = privid');
-            $this->db->select('u.id,u.name as fullname,privid,email,username,created_at,p.name');
-            $query = $this->db->get('users as u');
+        $this->db->join('privileges as p','p.id = privid');
+        $this->db->select('u.id,u.name as fullname,privid,email,username,created_at,p.name as pname');      
+        $query = $this->db->get('users as u');
             return $query->result_array();
         }else{
             $this->db->join('privileges as p','p.id = privid');

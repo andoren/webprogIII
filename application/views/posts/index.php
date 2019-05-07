@@ -6,7 +6,11 @@
         <img class="post-thumb img-fluid  object-fit_scale-down" src="<?php echo base_url().'assets/images/posts/thumbnails/'.$post['thumbimg']?>">
     </div>
     <div class="col-md-9">
-        <small class="post-date">Posted at: <?php echo $post['created_at'];?> a(z) <strong><a href="<?php echo base_url().'categories/posts/'.$post['id']?>"><?php echo $post['catname'] ?></a></strong>-ban/ben</small>
+        <small class="post-date">Posted at: <?php echo $post['created_at'];?> a(z) <strong><?php 
+        foreach ($post['categories'] as $category) :?>
+                <a href="<?php echo base_url()."categories/".$category['id'] ?>"><?php echo $category['name']?></a>, &nbsp;
+            <?php        endforeach;?>
+            </strong>-ban/ben</small>
         <br>
         <div class="post-body">
             <?php echo htmlspecialchars(word_limiter($post['body'],70));?>

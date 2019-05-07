@@ -6,85 +6,85 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
     <script src="<?php echo base_url();?>assets/ckeditor/ckeditor.js"></script>
+    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://bootswatch.com/_assets/js/custom.js"></script>
     <title>Misi első blog weboldala</title>             
     </head>
     <body style="padding-top: 0px" >       
-        <div class="wrapper">
-             <div class="sidenav ">
-              <div >
-                  <ul>
-                      <li style="padding-left: 0">
-                        <div class="navbar-header" >
-                            <a href="<?php echo base_url(); ?>" class="navbar-brand" style="font-size: 30px">Misi blog</a>
-                        </div>                  
-                        <br>
-                        <br>
-                        <hr style="color:white;">
-                    </li>
-                    <li>
-                      <a href="<?php echo base_url()?>admin">Home</a>
-                    </li>
-                    <li>
-                        <div class="dropdown">
-                            <a href="#" class="dropbtn">Posts</a>
-                                <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/posts/create">Create</a>
-                                    <a href="<?php echo base_url()?>admin/posts/">Modify</a>
-                                </div>
-                        </div> 
-                    </li>
-                    <li>
-                       <div class="dropdown">
-                         <a href="#" class="dropbtn">Pages</a>
-                                <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/pages/create">Create</a>
-                                    <a href="<?php echo base_url()?>admin/pages/">Modify</a>                                    
-                                </div>
-                        </div> 
-                    </li>
-                    <li>
-                       <div class="dropdown">
-                         <a href="#" class="dropbtn">Categories</a>
-                                <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>categories/add">Create</a>
-                                    <a href="<?php echo base_url()?>admin/categories/index">Modify</a>
-                                </div>
-                        </div> 
-                    </li>
-                    <li>
-                       <div class="dropdown">
-                         <a href="#" class="dropbtn">Menus</a>
-                                <div class="dropdown-content">
-                                    <a href="<?php echo base_url()?>admin/menu/create">Create</a>
-                                     <a href="<?php echo base_url()?>admin/menu">Modify</a>  
-                                </div>
-                        </div> 
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url()?>admin/images/index">Gallery</a>
-                    </li>
-                    <?php 
-                    if($this->session->userdata('user_id')==1)
-                    echo'<li>
-                        <div class="dropdown">
-                         <a href="#" class="dropbtn">Users</a>
-                                <div class="dropdown-content">
-                                    <a href="'.base_url().'admin/users/create">Register</a>
-                                    <a href="'.base_url().'admin/users/index">Modify</a>
-                                </div>
-                        </div> 
-                    </li>';
-                    
-                    ?>
 
-                    <li style=" position:absolute; bottom:0;" >
-                        <a href="<?php echo base_url()?>users/logout" >Log out</a>
-                    </li>                                       
-                  </ul>               
+        <div class="wrapper">
+             <div class="navbar navbar-expand-lg  navbar-dark bg-dark">
+      <div class="container">
+        <a href="<?php echo base_url(); ?>" class="navbar-brand" style="font-size: 30px">Misi blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url()?>admin">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Posts <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="themes">
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/posts/create">Create</a>
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/posts/">Modify</a>
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/posts/create">Creat from csv</a>
               </div>
-             </div>
+            </li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Pages <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="themes">
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/pages/create">Create</a>
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/pages/">Modify</a>
+
+              </div>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">Categories <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="download">
+                <a class="dropdown-item" href="<?php echo base_url()?>categories/add">Create</a>
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/categories/index">Modify</a>
+              </div>
+            </li>
+                        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">Menus <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="download">
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/menu/create">Create</a>
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/menu/">Modify</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url()?>admin/images/index">Gallery</a>
+            </li>
+            <?php 
+                    if($this->session->userdata('privilege')=="admin"):?>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">Users <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="download">
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/users/create">Register</a>
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/users/index">Modify</a>
+              </div>
+            </li>
+            <?php endif;?>
+
+            
+          </ul>
+
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url()?>users/logout" >Log out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
            
-        <div class="main">
+           
+        <div class="container">
              <?php if($this->session->flashdata('user_registered')):?>
                 <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>' ?>
             <?php endif; ?>

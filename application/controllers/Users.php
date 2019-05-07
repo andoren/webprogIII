@@ -38,14 +38,15 @@ class Users extends CI_Controller {
             $password = sha1($this->input->post('password'));
             $username = $this->input->post('username');
             $this->load->model('user_model');
-            $user_id = $this->user_model->login($username,$password);
-            if($user_id){
+            $user = $this->user_model->login($username,$password);
+            if($user){
                 $user_data = array(
-                    'user_id'=>$user_id,
+                    'user_id'=>$user['id'],
                     'username'=>$username,
                     'logged_in'=> true,
-                    
+                    'privilege'=>$user['pname']
                 );
+                
                 $this->session->set_userdata($user_data);
                 $this->session->set_flashdata('user_loggedin','You are logged in. Now you can edit the website '.$username);
                 redirect('posts');

@@ -29,13 +29,12 @@ name varchar(255) not null,
 created_at timestamp default current_timestamp(),
 created_by int references misiblog.users(id)
 );
-insert into misiblog.categories(name,created_by)values('Film',1);
-insert into misiblog.categories(name,created_by)values('Túra',1);
-insert into misiblog.categories(name,created_by)values('Informatika',1);
+insert into misiblog.categories(name,created_by)values('Technology',1);
+insert into misiblog.categories(name,created_by)values('Science',1);
+insert into misiblog.categories(name,created_by)values('Hobby',1);
 /*4*/
 create table misiblog.posts(
 id int PRIMARY KEY auto_increment,
-catid int not null  references misiblog.categories(id),
 title varchar(255) not null,
 slug varchar(255) not null unique,
 body text not null,
@@ -46,6 +45,26 @@ deleted tinyint default 0,
 deleted_at timestamp null,
 deleted_by int null references misiblog.users(id) 
 );
+
+create table misiblog.postcategories(
+postid int not null references misiblog.posts(id),
+catid int not null references misiblog.categories(id)
+);
+create table misiblog.comments(
+id int primary key auto_increment,
+postid int,
+name varchar(255),
+email varchar(255),
+body text,
+created_at timestamp default current_timestamp()
+);
+create table misiblog.postcomments(
+
+);
+insert into misiblog.postcategories(postid,catid)values(15,10);
+select * from misiblog.postcategories;
+select * from misiblog.categories;
+select pc.postid, c.name from misiblog.postcategories pc inner join misiblog.categories c on(c.id = pc.catid);
 /*5*/
 create table misiblog.pages(
 id int PRIMARY KEY auto_increment,
@@ -79,7 +98,7 @@ insert into misiblog.posts(title,catid,slug,body,created_by)values('Third Post',
 select * from misiblog.posts;
 select * from misiblog.users;
 select * from misiblog.categories;
-delete from misiblog.users where id = 3;
+delete from misiblog.menus where id >9;
 update misiblog.posts set thumbimg = "noimage.jpg" where id = 3;
 insert into misiblog.pages(title,slug,body)values('Home page','home','<p>This is my home page</p>');
 insert into misiblog.menus(name,page_slug)values('Home','home');
@@ -90,9 +109,15 @@ insert into misiblog.menus(name,link)values('About me','http://localhost/blog/ab
 insert into misiblog.menus(name,link,target)values('Github','https://github.com/andoren',1);
 insert into misiblog.menus(name,link,target)values('EKE','https://uni-eszterhazy.hu/',1);
 select * from misiblog.menus;
-delete from misiblog.menus where id = 6;
+delete from misiblog.posts where id > 15;
 select * from misiblog.menus where deleted = 0 and name = "About me";
 truncate misiblog.menus;
 select * from misiblog.pages;
 select * from misiblog.pages left join misiblog.users on (misiblog.pages.created_by=misiblog.users.id);
 select * from misiblog.posts;
+select * from misiblog.categories;
+update misiblog.menus set page_slug="categories" where id = 8;
+select * from misiblog.users;
+SELECT c.id, c.name FROM misiblog.postcategories  as pc JOIN misiblog.categories c ON c.id = pc.catid WHERE pc.postid = '15' ORDER BY pc.catid;
+ALTER TABLE misiblog.posts
+DROP COLUMN catid;

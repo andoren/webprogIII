@@ -23,7 +23,7 @@
       <td><?php echo $user['username']; ?></td>
       <td><?php echo $user['email']; ?></td>
       <td><?php echo $user['created_at']; ?></td>
-      <td><?php echo $user['name']; ?></td>
+      <td><?php echo $user['pname']; ?></td>
       <td>  <?php echo form_open('users/edit'); ?>
             <input type="hidden" name="id" Value ="<?php echo $user['id']?>">  
             <input type="submit" value="Edit" class="btn btn-success pull-left">

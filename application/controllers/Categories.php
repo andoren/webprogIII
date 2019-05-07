@@ -21,6 +21,7 @@ class Categories extends CI_Controller{
         }
 
     }
+    
     public function index(){
         $data['title']="Categories";
         $data['categories']=$this->category_model->get_categories();

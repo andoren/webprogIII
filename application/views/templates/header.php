@@ -73,5 +73,11 @@
             <?php if($this->session->flashdata('menu_created')):?>
                 <?php echo '<p class="alert alert-success">'.$this->session->flashdata('menu_created').'</p>' ?>
             <?php endif; ?>
+            <?php if($this->session->flashdata('error')):?>
+                <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('error').'</p>' ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('success')):?>
+                <?php echo '<p class="alert alert-success">'.$this->session->flashdata('success').'</p>' ?>
+            <?php endif; ?>
 
 

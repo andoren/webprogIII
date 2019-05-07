@@ -22,12 +22,12 @@
       <td><?php echo $category['fullname']; ?></td>
       <td>  <?php echo form_open('categories/edit'); ?>
             <input type="hidden" name="id" Value ="<?php echo $category['id']?>">  
-            <input <?php $uid = $this->session->userdata('user_id'); if(!($category['created_by']==$uid || $uid == 1)) echo 'disabled'?> type="submit" value="Edit" class="btn btn-success pull-left">
+            <input <?php $uid = $this->session->userdata('user_id'); if(!($category['created_by']==$uid || $this->session->userdata('privilege') == 'admin')) echo 'disabled'?> type="submit" value="Edit" class="btn btn-success pull-left">
             <?php echo form_close() ?>
       </td>
       <td><?php echo form_open('categories/delete'); ?>
             <input type="hidden" name="id" Value ="<?php echo $category['id']?>">  
-            <input <?php $uid = $this->session->userdata('user_id'); if((!($category['created_by'] == $uid || $uid == 1))) echo 'disabled'?> type="submit" value="Delete" class="btn btn-danger pull-left">
+            <input <?php $uid = $this->session->userdata('user_id'); if(!($category['created_by'] == $uid || $this->session->userdata('privilege') == 'admin')) echo 'disabled'?> type="submit" value="Delete" class="btn btn-danger pull-left">
           <?php echo form_close() ?></td>
 
     </tr>

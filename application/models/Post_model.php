@@ -5,10 +5,9 @@ class Post_Model extends CI_Model{
     }
     public function get_Posts($slug=FALSE){
         if($slug === FALSE){
-            $this->db->select('p.id,p.thumbimg,p.title,p.body,p.slug,p.created_by,p.created_at,u.name,c.name as catname, c.id as cid',false);
+            $this->db->select('p.id,p.thumbimg,p.title,p.body,p.slug,p.created_by,p.created_at,u.name',false);
             $this->db->from('posts as p');
             $this->db->join('users as u','u.id = p.created_by','left');
-            $this->db->join('categories as c','c.id = p.catid');
             $this->db->order_by('p.id','DESC');
             $query = $this->db->get();
             return $query->result_array();
@@ -23,11 +22,19 @@ class Post_Model extends CI_Model{
           'title'=>$this->input->post('title'),  
           'slug'=>$slug,  
           'body'=>$this->input->post('body'),  
-          'catid'=>$this->input->post('catid'),
           'thumbimg' => $post_image,
           'created_by'=>$this->session->userdata('user_id') 
         );
-        return $this->db->insert('posts',$data);
+        
+        
+        
+        $query =  $this->db->insert('posts',$data);
+        $chlist = $this->input->post('check_list');
+        $id = $this->db->get_where('posts',array('slug'=>$slug))->row_array()['id'];  
+        foreach ($chlist as $category){
+            $this->db->insert('postcategories',array('postid'=>$id,'catid'=>$category));
+        }
+        
     }
     public function delete_Post($id){
         $this->db->where('id',$id);

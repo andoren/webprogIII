@@ -22,7 +22,9 @@
       <td><?php echo htmlspecialchars(word_limiter($post['body'],20)); ?></td>
       <td><?php echo $post['created_at']; ?></td>
       <td><?php echo $post['name']; ?></td>
-      <td><?php echo $post['catname']; ?></td>
+      <td>        <?php foreach ($post['categories'] as $category) :?>
+               <?php echo $category['name']?>, &nbsp;
+            <?php        endforeach;?></td>
       <td>  <?php echo form_open('posts/edit'); ?>
             <input type="hidden" name="slug" Value ="<?php echo $post['slug']?>">  
             <input <?php $uid = $this->session->userdata('user_id'); if(!($post['created_by']==$uid || $uid == 1)) echo 'disabled'?> type="submit" value="Edit" class="btn btn-success pull-left">

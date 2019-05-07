@@ -1,6 +1,6 @@
 <?php echo form_open('users/login'); ?>
-<div class="row">
-    <div class="col-4 offset-md-4">
+<div >
+    <div >
         <h1 class="text-center"><?=$title?></h1>
         <br>
         <div class="form-group">
