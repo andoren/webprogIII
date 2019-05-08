@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css" media="screen">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://bootswatch.com/_assets/js/custom.js"></script>
     <title>Misi első blog weboldala</title>
         
         
     </head>
-    <body style="padding-top: 0px" >
+    <body class="d-flex flex-column" style="padding-top: 0px" >
         
         <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
               <div class="container-fluid">
@@ -19,11 +23,14 @@
                   <a href="<?php echo base_url(); ?>" class="navbar-brand">Misi blog</a>
 
                 </div>
-                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav">
                       <?php foreach ($menus as $menu):?>
-                      <li class="nav-item">
-                          <a class="nav-link" href="
+                                  <li class="nav-item">
+              <a class="nav-link" href="
                               <?php if($menu['target']==0)
                               {
                               echo base_url().$menu['page_slug'];
@@ -32,7 +39,8 @@
                               else {
                                   echo $menu['link'];
                           }?>" <?php if($menu['target'] == 1) echo 'target="_blank"' ?> > <?php echo $menu['name']; ?></a>
-                      </li>
+            </li>
+
                       <?php endforeach;?>
                   </ul>
 
@@ -50,8 +58,9 @@
                     
                   </ul>               
               </div>
+                  </div>
         </nav>
-        <div style="margin-top:20px"  class ="container">
+        <div style="margin-top:20px"  class =" container d-flex h-100 flex-column">
             <?php if($this->session->flashdata('user_registered')):?>
                 <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>' ?>
             <?php endif; ?>

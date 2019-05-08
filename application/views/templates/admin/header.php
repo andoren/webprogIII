@@ -31,7 +31,7 @@
               <div class="dropdown-menu" aria-labelledby="themes">
                 <a class="dropdown-item" href="<?php echo base_url()?>admin/posts/create">Create</a>
                 <a class="dropdown-item" href="<?php echo base_url()?>admin/posts/">Modify</a>
-                <a class="dropdown-item" href="<?php echo base_url()?>admin/posts/create">Creat from csv</a>
+                <a class="dropdown-item" href="<?php echo base_url()?>admin/posts/index_csv">Creat from csv</a>
               </div>
             </li>
              <li class="nav-item dropdown">

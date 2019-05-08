@@ -20,6 +20,7 @@ class Users extends CI_Controller {
             $password = sha1($this->input->post('password'));
             $this->load->model('user_model');
             $this->user_model->register($password);
+            $this->log_model->log('User registered',$this->session->userdata('user_id'));
             $this->session->set_flashdata('user_registered','User registered.');
             redirect('admin/users');
         }
@@ -48,6 +49,7 @@ class Users extends CI_Controller {
                 );
                 
                 $this->session->set_userdata($user_data);
+                $this->log_model->log('User logged in',$this->session->userdata('user_id'));
                 $this->session->set_flashdata('user_loggedin','You are logged in. Now you can edit the website '.$username);
                 redirect('posts');
             }
@@ -59,6 +61,7 @@ class Users extends CI_Controller {
         }    
     }
     public function logout(){
+        $this->log_model->log('User looged out',$this->session->userdata('user_id'));
         $this->session->unset_userdata('logged_in');
         $this->session->unset_userdata('user_id');
         $this->session->unset_userdata('username');

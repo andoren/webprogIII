@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$route['posts/creatfromcsv']='posts/createpost_csv';
+$route['admin/posts/createpost_csv']='posts/createpost_csv';
+$route['admin/posts/index_csv']='posts/index_csv';
 $route['admin/images/delete']='images/delete';
 $route['admin/images/add']='images/add';
 $route['admin/images/index']='images/index';

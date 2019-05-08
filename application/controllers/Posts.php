@@ -45,7 +45,7 @@ class Posts extends CI_Controller{
         }
         else{
             if(empty($this->input->post('check_list'))){
-            $this->session->set_flashdata('error','You must select atlest one category');
+            $this->session->set_flashdata('error','You must select atleast one category');
             redirect('admin/posts/create');  
             }
                 $config['upload_path']          = './assets/images/posts/thumbnails/';
@@ -63,6 +63,7 @@ class Posts extends CI_Controller{
                     $post_image = $_FILES['userfile']['name'];
                 }
             $this->post_model->create_post($post_image);   
+            $this->log_model->log('Post created',$this->session->userdata('user_id'));
             $this->session->set_flashdata('post_created','Post has been added');
             redirect('posts');  
         }
@@ -71,7 +72,8 @@ class Posts extends CI_Controller{
    public function delete(){
        $id = $this->input->post('id');
        $this->post_model->delete_post($id);  
-       redirect('posts');
+       $this->log_model->log('Post deleted',$this->session->userdata('user_id'));
+       redirect('admin/posts');
    }
    public function edit(){
        if(!$this->session->userdata('logged_in')){
@@ -97,21 +99,44 @@ class Posts extends CI_Controller{
            redirect('users/login');
        }
       $this->post_model->update_post();
+      $this->log_model->log('Menu modified',$this->session->userdata('user_id'));
       $this->session->set_flashdata('post_updated','Post has been updated');
       redirect('posts');
    }
+   public function index_csv(){
+            if(!$this->session->userdata('logged_in')){
+             redirect('users/login');
+            }
+            $data['title']='Create posts from csv';
+            $data['help']='Hint: title,body,categoryid,userid,uploadedimagename. Test file in assets/csv/test.csv';
+            $this->load->view('templates/admin/header');
+            $this->load->view('posts/index_csv',$data);
+            $this->load->view('templates/admin/footer');    
+   }
    public function createpost_csv(){
-       $row = 1;
-        if (($handle = fopen(base_url()."assets/csv/temp.csv", "r")) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-            $num = count($data);
-        echo "<p> $num fields in line $row: <br /></p>\n";
-        $row++;
-        for ($c=0; $c < $num; $c++) {
-            echo $data[$c] . "<br />\n";
-        }
-    }
-    fclose($handle);
-    }   
+
+       
+                $config['upload_path']          = './assets/csv/';
+                $config['allowed_types']        = 'csv';
+                $config['max_size']             = 100;
+                $config['overwrite']            = true;
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                             $this->session->set_flashdata('error',var_dump($error));
+                             redirect('admin/posts/index_csv');
+                }
+                else
+                {
+                        $data = array('upload_data' => $this->upload->data());
+                        $this->load->model('post_model');
+                        $this->post_model->createposts_csv($_FILES['userfile']['name']);
+                        $this->session->set_flashdata('success','Add posts from csv was successfull');
+                        $this->log_model->log('Posts added from csv',$this->session->userdata('user_id'));
+                        redirect('admin/posts');
+                }       
    }
 }

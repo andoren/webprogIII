@@ -10,12 +10,10 @@
       <textarea id="editor"  class="form-control" name="body"> <?php echo $post['body'];?> </textarea>
   </div>
 <div class="form-group">
-    <label>Categories</label>
-    <select name="catid" class="form-control">
+    <label>Categories</label><br>    
         <?php foreach ($categories as $category):?>
-        <option <?php if ($post['catid']==$category['id']) echo 'selected'?> value="<?php  echo $category['id']?>"><?php  echo $category['name']?></option>
-        <?php endforeach;?>
-    </select>
+        <input type="checkbox" name="check_list[]" value="<?php echo $category['id']?>"><label><?=$category['name']?></label><br/>
+        <?php endforeach;?>    
 </div>
   <button type="submit" class="btn btn-primary">Modify</button>
 </form>

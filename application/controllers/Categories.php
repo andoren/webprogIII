@@ -16,6 +16,7 @@ class Categories extends CI_Controller{
         }
         else{
             $this->category_model->add_category();
+            $this->log_model->log('Added category',$this->session->userdata('user_id'));
             $this->session->set_flashdata('category_added','Category has been added');
             redirect('admin/categories/index');
         }
@@ -29,7 +30,7 @@ class Categories extends CI_Controller{
         $headerdata['menus'] = $this->menu_model->get_menus();
         $this->load->view('templates/header',$headerdata);
         $this->load->view('categories/index',$data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer',$headerdata);
     }
     public function index_admin(){
         $data['title']="Categories";
@@ -45,7 +46,7 @@ class Categories extends CI_Controller{
         $headerdata['menus'] = $this->menu_model->get_menus();
         $this->load->view('templates/header',$headerdata);
         $this->load->view('posts/index',$data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer',$headerdata);
     }
     public function edit(){
        if(!$this->session->userdata('logged_in')){
@@ -69,6 +70,7 @@ class Categories extends CI_Controller{
        }
         $this->load->model('category_model');
         if($this->category_model->update_category()){
+            $this->log_model->log('Category modified',$this->session->userdata('user_id'));
             $this->session->set_flashdata('modified','Category has been modified');
         }
         else {
@@ -83,6 +85,7 @@ class Categories extends CI_Controller{
         $this->load->model('category_model');
         if($this->category_model->delete_category()){
             $this->session->set_flashdata('deleted','Category has been deleted');
+            $this->log_model->log('Category deleted',$this->session->userdata('user_id'));
         }
         else {
             $this->session->set_flashdata('error','There was an error...');

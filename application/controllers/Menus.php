@@ -19,7 +19,7 @@ class Menus extends CI_Controller{
            redirect('users/login');
        }
         $data['title']='Create menu';
-                $this->load->model('page_model');
+        $this->load->model('page_model');
         $data['pages'] = $this->page_model->get_pages();
         $this->form_validation->set_rules('name','Név','required');
 
@@ -32,6 +32,7 @@ class Menus extends CI_Controller{
             
             $this->load->model('menu_model');
             $this->menu_model->create_menu();
+            $this->log_model->log('Menu created',$this->session->userdata('user_id'));
             $this->session->set_flashdata('menu_created','Menu has been added');
             redirect('admin/menu');
         }
@@ -67,6 +68,7 @@ class Menus extends CI_Controller{
         $result = $this->menu_model->delete_menu();
         if($result){
             $this->session->set_flashdata('post_updated','Menu has been deleted');
+            $this->log_model->log('Menu deleted',$this->session->userdata('user_id'));
         }else{
             $this->session->set_flashdata('error','There was an error while deleting the menu.');
         }
@@ -79,6 +81,7 @@ class Menus extends CI_Controller{
        }
        $this->load->model('menu_model');
       $this->menu_model->update_menu();
+      $this->log_model->log('Menu updated',$this->session->userdata('user_id'));
       $this->session->set_flashdata('post_updated','Menu has been updated');
       redirect('admin/menu');
        

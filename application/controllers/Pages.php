@@ -12,7 +12,7 @@ class Pages extends CI_Controller{
         $headerdata['menus'] = $this->menu_model->get_menus();
         $this->load->view('templates/header',$headerdata);
         $this->load->view('page',$data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer',$headerdata);
         
     }     
     
@@ -31,6 +31,7 @@ class Pages extends CI_Controller{
         else{
             $this->load->model('page_model');
             $this->page_model->create_page();   
+            $this->log_model->log('Page created',$this->session->userdata('user_id'));
             $this->session->set_flashdata('created','Page has been added');
             redirect('admin/pages');  
         }
@@ -58,6 +59,7 @@ class Pages extends CI_Controller{
         $this->load->model('page_model');
         if($this->page_model->update_page()){
             $this->session->set_flashdata('modified','Page has been modified');
+            $this->log_model->log('Page modified',$this->session->userdata('user_id'));
         }
         else {
             $this->session->set_flashdata('error','There was an error...');
@@ -84,6 +86,7 @@ class Pages extends CI_Controller{
         $this->load->model('page_model');
         if($this->page_model->delete_page()){
             $this->session->set_flashdata('deleted','Page has been deleted');
+            $this->log_model->log('Page deleted',$this->session->userdata('user_id'));
         }
         else {
             $this->session->set_flashdata('error','There was an error...');

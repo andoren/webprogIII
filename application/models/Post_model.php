@@ -16,7 +16,9 @@ class Post_Model extends CI_Model{
         $data = $query->row_array();
         return $data;
     }
-    public function create_Post($post_image){
+    public function create_Post($post_image,$data = false){
+        
+        if($data===false){
         $slug = convert_accented_characters( url_title($this->input->post('title'),'dash',true));
         $data = array(
           'title'=>$this->input->post('title'),  
@@ -25,16 +27,26 @@ class Post_Model extends CI_Model{
           'thumbimg' => $post_image,
           'created_by'=>$this->session->userdata('user_id') 
         );
-        
-        
-        
         $query =  $this->db->insert('posts',$data);
         $chlist = $this->input->post('check_list');
         $id = $this->db->get_where('posts',array('slug'=>$slug))->row_array()['id'];  
         foreach ($chlist as $category){
             $this->db->insert('postcategories',array('postid'=>$id,'catid'=>$category));
         }
-        
+        }
+        else{
+        $slug = convert_accented_characters( url_title($data['title'],'dash',true));
+        $temp = array(
+          'title'=>$data['title'],  
+          'slug'=>$slug,  
+          'body'=>$data['body'],  
+          'thumbimg' => $post_image,
+          'created_by'=>$data['userid']
+        );
+        $query =  $this->db->insert('posts',$temp);
+        $id = $this->db->get_where('posts',array('slug'=>$slug))->row_array()['id'];  
+        $this->db->insert('postcategories',array('postid'=>$id,'catid'=>$data['catid']));
+        }                   
     }
     public function delete_Post($id){
         $this->db->where('id',$id);
@@ -47,10 +59,14 @@ class Post_Model extends CI_Model{
           'title'=>$this->input->post('title'),  
           'slug'=>$slug,  
           'body'=>$this->input->post('body'),  
-          'catid'=>$this->input->post('catid')
         );
-         
-          $this->db->where('id',$this->input->post('id'));
+        $this->delete_post_categories($this->input->post('id')); 
+        
+        $chlist = $this->input->post('check_list'); 
+        foreach ($chlist as $category){
+            $this->db->insert('postcategories',array('postid'=>$this->input->post('id'),'catid'=>$category));
+        }
+        $this->db->where('id',$this->input->post('id'));
         return $this->db->update('posts',$data);
     }
     public function get_Categories(){
@@ -64,6 +80,26 @@ class Post_Model extends CI_Model{
             $this->db->order_by('p.id','DESC');
             $query = $this->db->get_where('posts as p',array('p.catid'=>$id));
             return $query->result_array();
+    }
+    public function createposts_csv($file){
+           $row = 1;
+           if (($handle = fopen(base_url()."assets/csv/".$file, "r")) !== FALSE) {
+                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                    $temp = array(
+                        'title' => $data[0],
+                        'body'=>$data[1],
+                        'catid'=>$data[2],
+                        'userid'=>$data[3]
+                        
+                    );
+                    $this->create_Post($data[4], $temp);
+                }
+            fclose($handle);
+            }
+           
+    }
+    public function delete_post_categories($id){
+        $this->db->delete('postcategories',array('postid'=>$id));
     }
 }
 
