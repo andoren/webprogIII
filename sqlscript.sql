@@ -20,6 +20,13 @@ created_at timestamp default current_timestamp(),
 deleted tinyint default 0,
 privid int references misiblog.privileges(id)
 );
+create table misiblog.logs(
+id int primary key auto_increment,
+action varchar(255) not null,
+userid int references misiblog.users(id),
+created_at timestamp default current_timestamp()
+);
+select * from misiblog.logs;
 insert into misiblog.users(name,email,username,password,privid)values('Pekár Mihály','kiscica@kiscica.hu','misi',sha1('kiscica'),1);
 insert into misiblog.users(name,email,username,password,privid)values('Gipsz Jakab','kiscica2@kiscica2.hu','gipsz',sha1('jakab'),2);
 /*3*/
@@ -45,24 +52,26 @@ deleted tinyint default 0,
 deleted_at timestamp null,
 deleted_by int null references misiblog.users(id) 
 );
-
+drop table misiblog.postcategories;
 create table misiblog.postcategories(
-postid int not null references misiblog.posts(id),
-catid int not null references misiblog.categories(id)
+postid int not null references misiblog.posts(id) ON DELETE CASCADE,
+catid int not null references misiblog.categories(id) ON DELETE CASCADE
 );
+drop table misiblog.comments;
 create table misiblog.comments(
 id int primary key auto_increment,
-postid int,
+postid int references misiblog.posts(id) ,
 name varchar(255),
 email varchar(255),
 body text,
 created_at timestamp default current_timestamp()
 );
-create table misiblog.postcomments(
 
-);
 insert into misiblog.postcategories(postid,catid)values(15,10);
 select * from misiblog.postcategories;
+select id from misiblog.posts;
+delete from misiblog.posts where id > 15;
+truncate misiblog.postcategories;
 select * from misiblog.categories;
 select pc.postid, c.name from misiblog.postcategories pc inner join misiblog.categories c on(c.id = pc.catid);
 /*5*/
